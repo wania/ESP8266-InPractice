@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/night.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section class="title" data-background-image="img/cia-out.jpg" data-background-opacity="0.6">
+				  <h2 class="title">A title</h2>
+				  <h3>a subtitle</h3>
+				  <p>- Authors -</p>
+				</section>
+
+				<section data-background-image="img/terminator-assembly.jpg">
+				  <div class="overlay citation">
+					<p>
+					  "Some citation."
+					</p>
+					<p class="author">Author, Source</p>
+				  </div>
+				</section>
+
+				<section data-background-image="img/terminator-assembly.jpg" data-background-opacity="0.2">
+				  <h2>Why?</h2>
+				  <h4 class="fragment other-color">Text 1</h4>
+				  <h4 class="fragment other-color-3">Text 3</h4>
+				  <h2 class="fragment">Other...</h2>
+				  <h4 class="fragment other-color-2">... this can be</h4>
+				  <h4 class="fragment other-color-3">... or this</h4>
+				  <h4 class="fragment other-color-4">... or maybe this?</h4>
+				</section>
+				
+				<section>
+				  <h3>Machine code</h3>
+				  <p>
+					<code class="small-code">169 0 141 32 208 169 1 141 32 208 76 0 192</code>
+				  </p>
+
+      <h3 class="fragment" data-fragment-index="2">Syntax</h3>
+      <div class="flex">
+        <div class="fragment">
+          <pre class="fragment" data-fragment-index="2">
+               169   0
+               141  32 208
+               169   1
+               141  32 208
+                76   0 192
+          </pre>
+        </div>
+        <div class="fragment">
+          <pre class="fragment other-color" data-fragment-index="2">
+$A9 $00
+$8D $20 $D0
+$A9 $01
+$8D $20 $D0
+$4C $00 $C0
+      </pre>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>Assembly language</h3>
+      <p>
+        - human readable form of machine code
+      </p>
+      <h3>Assembler</h3>
+      <p>
+        - translator (a program) from assembly into the machine code
+      </p>
+    </section>
+
+    <section>
+      <h4>Assembly instruction example</h4>
+      <h4 class="other-color-2">LDA - LoaD Accumulator</h4>
+      <pre>
+                            LDA value
+      </pre>
+    </section>
+
+    <section>
+      <h3>Addressing modes (6502)</h3>
+      <pre>
++----------------+-----------------------+---------+---------+----------+
+| Addressing Mode| Assembly Language Form| OP CODE |No. Bytes|No. Cycles|
++----------------+-----------------------+---------+---------+----------+
+|  Immediate     |   LDA #$FF            |   $A9   |    2    |    2     |
+|  ZeroPage      |   LDA $FF             |   $A5   |    2    |    3     |
+|  ZeroPage,X    |   LDA $FF,X           |   $B5   |    2    |    4     |
+|  Absolute      |   LDA $FFFF           |   $AD   |    3    |    4     |
+|  Absolute,X    |   LDA $FFFF,X         |   $BD   |    3    |    4*    |
+|  Absolute,Y    |   LDA $FFFF,Y         |   $B9   |    3    |    4*    |
+|  (Indirect,X)  |   LDA ($FF,X)         |   $A1   |    2    |    6     |
+|  (Indirect),Y  |   LDA ($FF),Y         |   $B1   |    2    |    5*    |
++----------------+-----------------------+---------+---------+----------+
+*add extra 1 cycle if crossing 256b page boundary
+      </pre>
+    </section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				history: true,
+				slideNumber: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

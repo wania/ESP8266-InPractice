@@ -1,0 +1,113 @@
+div.flex {
+    display: flex;
+    justify-content: space-between;
+}
+div.v-center {
+    align-items: center;
+}
+div.flex>div {
+    margin-right: 10px;
+    margin-left: 10px;
+    flex-grow: 1;
+}
+.align-left {
+    text-align: left;
+}
+.medium-size {
+    font-size: 30px;
+}
+div.rights {
+    font-size: small;
+}
+div.emph div {
+    margin: 10px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: lightgrey;
+    padding: 15px;
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: "Montserrat", Impact, sans-serif;
+}
+h1.uppercase {
+    text-transform: uppercase;
+}
+.reveal section img.plain {
+    border-style: none;
+    border-width: 0px;
+    background: rgba(255,255,255,0);
+    top: 15px;
+    position: relative;
+}
+.border {
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+}
+span.border {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.reveal section div.tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.reveal section div.tiles > div > img {
+    border-style: none;
+    border-width: 0px;
+    background: rgba(255,255,255,0);
+    height: 100px;
+    margin: 5px;
+}
+.reveal section div.tiles > div > p {
+    font-size: large;
+    margin: 2px;
+}
+.smaller {
+    font-size: xx-large;
+}
+pre.small-code {
+    font-size: medium;
+}
+code.small-code {
+    font-size: xx-large;
+}
+.other-color, h2.other-color, h1.other-color {
+    color: skyblue;
+}
+h3.other-color, h4.other-color {
+    color: skyblue;
+}
+h3.other-color-2, h4.other-color-2 {
+    color: springgreen;
+}
+h3.other-color-3, h4.other-color-3 {
+    color: tomato;
+}
+h3.other-color-4, h4.other-color-4 {
+    color: tan;
+}
+h1.title, h2.title, h3.title {
+    text-decoration: underline;
+}
+div.overlay {
+    border-radius: 1em;
+    padding: 1em;
+    background-color: rgba(0,0,0,0.6);
+}
+.citation {
+    text-align: left;
+    font-size: 1.0em;
+    color: peachpuff;
+}
+.citation .author {
+    font-size: 0.5em;
+    text-align: right;
+}
