@@ -85,13 +85,13 @@ code.small-code {
 h3.other-color, h4.other-color {
     color: skyblue;
 }
-h3.other-color-2, h4.other-color-2 {
+.other-color-2, h3.other-color-2, h4.other-color-2 {
     color: springgreen;
 }
-h3.other-color-3, h4.other-color-3 {
+.other-color-3, h3.other-color-3, h4.other-color-3 {
     color: tomato;
 }
-h3.other-color-4, h4.other-color-4 {
+.other-color-4, h3.other-color-4, h4.other-color-4 {
     color: tan;
 }
 h1.title, h2.title, h3.title {
