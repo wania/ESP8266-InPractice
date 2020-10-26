@@ -95,56 +95,53 @@
             </ul>
         </section>
 
-        <section>
-            <section>
-                <h3 class="title">Wersje pudełkowe</h3>
-            </section>
-            <section>
-                <h3 class="title">Sonoff Basic</h3>
-                <img src="img/sonoff-basic.jpg" height="250">
-                <img src="img/sonoff-basic-diy.jpg" height="250">
-            </section>
-            <section>
-                <h3 class="title">Sonoff Basic (R1) piny</h3>
-                <img src="img/sonoff-basic-pinout.jpg" height="300">
-            </section>
-
-            <section>
-                <h3 class="title">Sonoff 4CH</h3>
-                <img src="img/sonoff-4ch.jpg" height="400">
-            </section>
-            <section>
-                <h3 class="title">Sonoff 4CH piny</h3>
-                <img src="img/sonoff4ch_pins.jpg" height="400">
-            </section>
-
-            <section>
-                <h3 class="title">Sonoff Slampher</h3>
-                <img src="img/sonoff-slampher.jpg" height="400">
-            </section>
-            <section>
-                <h3 class="title">Sonoff Slampher piny</h3>
-                <img src="img/sonoff-slampher-pins.jpg" height="400">
-            </section>
-
-            <section>
-                <h3 class="title">Shelly1</h3>
-                <img src="img/shelly-01.jpg" height="400">
-            </section>
-            <section>
-                <h3 class="title">Shelly1 piny</h3>
-                <img src="img/shelly1_pinout.jpg" height="400">
-            </section>
-
+         <section>
+            <h3 class="title">Wersje pudełkowe</h3>
+         </section>
+         <section>
+            <h3 class="title">Sonoff Basic</h3>
+            <img src="img/sonoff-basic.jpg" height="250">
+            <img src="img/sonoff-basic-diy.jpg" height="250">
+         </section>
+         <section>
+            <h3 class="title">Sonoff Basic (R1) piny</h3>
+            <img src="img/sonoff-basic-pinout.jpg" height="300">
+         </section>
+         <section>
+            <h3 class="title">Sonoff 4CH</h3>
+            <img src="img/sonoff-4ch.jpg" height="400">
+         </section>
+         <section>
+            <h3 class="title">Sonoff 4CH piny</h3>
+            <img src="img/sonoff4ch_pins.jpg" height="400">
+         </section>
+         <section>
+            <h3 class="title">Sonoff Slampher</h3>
+            <img src="img/sonoff-slampher.jpg" height="400">
+         </section>
+         <section>
+            <h3 class="title">Sonoff Slampher piny</h3>
+            <img src="img/sonoff-slampher-pins.jpg" height="400">
+         </section>
+         <section>
+            <h3 class="title">Shelly1</h3>
+            <img src="img/shelly-01.jpg" height="400">
         </section>
+        <section>
+            <h3 class="title">Shelly1 piny</h3>
+            <img src="img/shelly1_pinout.jpg" height="400">
+        </section>
+
         <section>
             <h1>Flashowanie</h1>
             <p>Moduły z gniazdem MicroUSB (NodeMCU, Wemos) wykrywają flashowanie i same przestawiają moduł ESP w odpowiedni tryb.</p>
+            <!-- Flash mode button -->
             <p class="other-color fragment">Moduły ESP-xx wymagają odpowiedniej konfiguracji podczas włączenia zasilania lub resetu aby przejść w tryb flash.</p>
         </section>
         <section>
             <h3>Flashowanie ESP-xx</h3>
             <img src="img/ESP8266-programmer-bare_schem.png" alt="ESP-8266 Flashing">
+            <!-- GPIO0 to GND = flashmode -->
         </section>
         <section>
             <h1>Firmware</h1>
@@ -274,7 +271,25 @@
                 <img src="img/esp-easy/esp-easy-tools-4.png" alt="Tools 4" width="600">
             </section>
         </section>
-
+        <section>
+           <h3>Tasmota</h3>
+           <a href="https://tasmota.github.io/docs/About/">
+             <img src="img/tasmota.png" width="700">
+           </a>
+           <aside class="notes">
+            Krótko o Historii Tasmoty: Sonoff, MQTT Hack, Tanio ;)
+           </aside>
+        </section>
+        <section>
+          <h4>NIE PRÓBUJ FLASHOWAĆ URZĄDZEŃ PODŁĄCZONYCH DO SIECI 230V!<h4>
+          <h3>Tasmota - flashowanie</h3>
+          <ul>
+            <li>Tasmotizer</li>
+            <li>Tasmota PyFlasher</li>
+            <li>NodeMCU PyFlasher</li>
+            <a href="https://github.com/espressif/esptool"><li>Esptool.py</li></a>
+            <li>Esptool executable</li>
+        </section>
 
     </div>
 </div>
