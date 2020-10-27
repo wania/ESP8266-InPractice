@@ -59,16 +59,40 @@ span.border {
     height: 0;
 }
 
+.reveal section div.tiles > div.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reveal section div.tiles > div.subtitle {
+    font-size: xx-large;
+    margin: 5px;
+    padding: 3px;
+    background-color: darkblue;
+    flex-grow: 2;
+    text-align: center;
+}
+
 .reveal section div.tiles > div > img {
     border-style: none;
     border-width: 0;
     background: rgba(255,255,255,0);
-    height: 100px;
+    height: 95px;
     margin: 5px;
 }
 .reveal section div.tiles > div > p {
     font-size: large;
     margin: 2px;
+}
+.reveal section div.tiles > div.text {
+    flex-grow: 3;
+    background-color: #303030;
+    margin: 6px;
+    padding: 3px;
+}
+.reveal section div.tiles > div p.title {
+    font-weight: bold;
 }
 .smaller {
     font-size: xx-large;
