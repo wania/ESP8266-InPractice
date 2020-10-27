@@ -317,23 +317,75 @@
             </section>
         </section>
         <section>
-           <h3>Tasmota</h3>
            <a href="https://tasmota.github.io/docs/About/">
-             <img src="img/tasmota.png" width="700">
+             <img src="img/tasmota.png" width="900">
            </a>
            <aside class="notes">
             Krótko o Historii Tasmoty: Sonoff, MQTT Hack, Tanio ;)
            </aside>
         </section>
         <section>
-          <h4>NIE PRÓBUJ FLASHOWAĆ URZĄDZEŃ PODŁĄCZONYCH DO SIECI 230V!<h4>
-          <h3>Tasmota - flashowanie</h3>
-          <ul>
-            <li>Tasmotizer</li>
-            <li>Tasmota PyFlasher</li>
-            <li>NodeMCU PyFlasher</li>
-            <a href="https://github.com/espressif/esptool"><li>Esptool.py</li></a>
-            <li>Esptool executable</li>
+          <section>
+            <h3>Tasmota - flashowanie</h3>
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">          
+              <h5>NIE PRÓBUJ FLASHOWAĆ URZĄDZEŃ PODŁĄCZONYCH DO SIECI 230V!<h4>
+            </div>
+            <ul>
+              <li>Tasmotizer</li>
+              <li>Tasmota PyFlasher</li>
+              <li>NodeMCU PyFlasher</li>
+              <a href="https://github.com/espressif/esptool"><li>Esptool.py</li></a>
+              <li>Esptool executable</li>
+          </section>
+          <section>
+            <h3>Programator (ch341)</h3>
+            <img src="img/ch341.jpg" width="500"></img>
+          </section>
+          <section>
+            <h3>Drivery (Linux)</h3>
+            <img src="img/ch341-linux-module.png">
+          </section>
+          <section>
+            <h4>esptool.py</h4>
+            <pre><code>esptool.py --port /dev/ttyUSB0 read_flash 0x00000 0x100000 image1M.bin</code></pre>
+            <pre><code>esptool.py --port /dev/ttyUSB0 erase_flash</code></pre>
+            <pre><code>esptool.py --port /dev/ttyUSB0 write_flash -fm dout 0x0 tasmota.bin</code></pre>
+            <!--
+            <a>flash_mode</a>
+            <table style="font-size: 25px;">
+              <thead>
+                <tr>
+                  <th>Option</th>
+                  <th>Mode Name</th>
+                  <th>Pins Used</th>
+                  <th>Speed (ESP8266 & ESP32)</th>
+                </tr><tr>
+                </thead>
+                <tbody>
+                  <td>qio</td>
+                  <td>Quad I/O</td>
+                  <td>4 pins used for address & data</td>
+                  <td>Fastest</td>
+                </tr><tr>
+                  <td>qout</td>
+                  <td>Quad Output</td>
+                  <td>4 pins used for data</td>
+                  <td>Approx 15% slower than qio</td>
+                </tr><tr>
+                  <td>dio</td>
+                  <td>Dual I/O</td>
+                  <td>2 pins used for address & data</td>
+                  <td>Approx 45% slower than qio</td>
+                </tr><tr>
+                  <td>dout</td>
+                  <td>Dual Output</td>
+                  <td>2 pins used for data</td>
+                  <td>Approx 50% slower than qio</td>
+                </tr>
+                </tbody>
+            </table>
+            -->
+          </section>
         </section>
 
     </div>
