@@ -61,7 +61,7 @@ span.border {
 
 .reveal section div.tiles > div > img {
     border-style: none;
-    border-width: 0px;
+    border-width: 0;
     background: rgba(255,255,255,0);
     height: 100px;
     margin: 5px;
