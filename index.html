@@ -27,9 +27,52 @@
             <p>T.b.d. - diagram wstępny (Smart Home, ...)</p>
         </section>
 
-        <section>
-            <p>T.b.d. - modele pudełkowe bez szczegółów</p>
+         <section>
+            <h3 class="title">Wersje pudełkowe</h3>
+         </section>
+
+         <section>
+            <h3 class="title">Sonoff Basic</h3>
+            <img src="img/sonoff-basic.jpg" height="250">
+            <img src="img/sonoff-basic-diy.jpg" height="250">
+            <p>TODO: Zrobić fotki urządzeń w użyciu</p>
+         </section>
+         <!--
+         <section>
+            <h3 class="title">Sonoff Basic (R1) piny</h3>
+            <img src="img/sonoff-basic-pinout.jpg" height="300">
+         </section>
+         -->
+         <section>
+            <h3 class="title">Sonoff 4CH</h3>
+            <img src="img/sonoff-4ch.jpg" height="400">
+         </section>
+         <!--
+         <section>
+            <h3 class="title">Sonoff 4CH piny</h3>
+            <img src="img/sonoff4ch_pins.jpg" height="400">
+         </section>
+         -->
+         <section>
+            <h3 class="title">Sonoff Slampher</h3>
+            <img src="img/sonoff-slampher.jpg" height="400">
+         </section>
+         <!--
+         <section>
+            <h3 class="title">Sonoff Slampher piny</h3>
+            <img src="img/sonoff-slampher-pins.jpg" height="400">
+         </section>
+         -->
+         <section>
+            <h3 class="title">Shelly1</h3>
+            <img src="img/shelly-01.jpg" height="400">
         </section>
+        <!--
+        <section>
+            <h3 class="title">Shelly1 piny</h3>
+            <img src="img/shelly1_pinout.jpg" height="400">
+        </section>
+        -->
 
         <section>
             <h3>Historia układu</h3>
@@ -145,43 +188,6 @@
             </div>
         </section>
 
-         <section>
-            <h3 class="title">Wersje pudełkowe</h3>
-         </section>
-         <section>
-            <h3 class="title">Sonoff Basic</h3>
-            <img src="img/sonoff-basic.jpg" height="250">
-            <img src="img/sonoff-basic-diy.jpg" height="250">
-         </section>
-         <section>
-            <h3 class="title">Sonoff Basic (R1) piny</h3>
-            <img src="img/sonoff-basic-pinout.jpg" height="300">
-         </section>
-         <section>
-            <h3 class="title">Sonoff 4CH</h3>
-            <img src="img/sonoff-4ch.jpg" height="400">
-         </section>
-         <section>
-            <h3 class="title">Sonoff 4CH piny</h3>
-            <img src="img/sonoff4ch_pins.jpg" height="400">
-         </section>
-         <section>
-            <h3 class="title">Sonoff Slampher</h3>
-            <img src="img/sonoff-slampher.jpg" height="400">
-         </section>
-         <section>
-            <h3 class="title">Sonoff Slampher piny</h3>
-            <img src="img/sonoff-slampher-pins.jpg" height="400">
-         </section>
-         <section>
-            <h3 class="title">Shelly1</h3>
-            <img src="img/shelly-01.jpg" height="400">
-        </section>
-        <section>
-            <h3 class="title">Shelly1 piny</h3>
-            <img src="img/shelly1_pinout.jpg" height="400">
-        </section>
-
         <section>
             <h1>Flashowanie</h1>
             <p>Moduły z gniazdem MicroUSB (NodeMCU, Wemos) wykrywają flashowanie i same przestawiają moduł ESP w odpowiedni tryb.</p>
@@ -197,8 +203,45 @@
             <h1>Firmware</h1>
         </section>
         <section>
-            <p>T.b.d. - nodeMCU & LUA (wspomnieć tylko, może screen z cloud buildera) - Marcin</p>
+            <h2>NodeMcu</h2>
+            <img src="img/nodemcu-logo.png">
         </section>
+        <section>
+          <h3>NodeMCU cloud bilder</h3>
+          <a href="https://nodemcu-build.com/">
+            <img src="img/nodemcu-cloudbuilder.png" height="550">
+          </a>
+        </section>
+        <section>
+          <section>
+            <img src="img/luaa.gif">
+          </section>
+          <section>
+            <h3>Web REST Server</h3>
+            <pre><code data-trim data-noescape style="font-size: 0.5em;">
+              srv=net.createServer(net.TCP)
+              srv:listen(80, function(conn)
+                conn:on("receive", function(client, request)
+                  local response
+                  local requestMap = getRequestMap(request)
+                  if (requestMap == nil) then
+                    response = BAD_REQUEST
+                  elseif (requestMap.method == "OPTIONS") then
+                    response = getAuthCORDHeader(requestMap.origin)
+                  elseif (requestMap.method == "GET") then
+                    response = getGPIOStatus(requestMap)
+                  elseif (requestMap.method == "PUT") then
+                    response = setGPIOFromRequestPath(requestMap)
+                  end
+                  conn:send(response)
+                  conn:close()
+                  collectgarbage()
+                  end)
+              end)
+            </code></pre>
+          </section>
+        </section>
+
         <section>
             <h2>ESP Easy</h2>
             <section>
@@ -372,8 +415,9 @@
         <section>
           <section>
             <h3>Tasmota - flashowanie</h3>
-            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">          
-              <h5>NIE PRÓBUJ FLASHOWAĆ URZĄDZEŃ PODŁĄCZONYCH DO SIECI 230V!<h4>
+            <div class="flex" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 10pt;">          
+              <h5>NIE PRÓBUJ FLASHOWAĆ URZĄDZEŃ PODŁĄCZONYCH DO SIECI 230V!</h5>
+              <img src="img/high_voltage_warning.svg" width="150">
             </div>
             <ul>
               <li>Tasmotizer</li>
