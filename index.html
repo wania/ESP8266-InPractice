@@ -143,7 +143,7 @@
                     <div class="break"></div>
                     <div class="text">
                         <p class="title">ESP-07</p>
-                        <p>1MiB Flash, 8xGPIO, ADC, Tx, Rx</p>
+                        <p>1MiB Flash, 9xGPIO, ADC, Tx, Rx</p>
                         <p>Antena ceramiczna + gniazdo</p>
                     </div>
                     <div class="img">
@@ -151,7 +151,7 @@
                     </div>
                     <div class="text">
                         <p class="title">ESP-12F</p>
-                        <p>4MiB Flash, 8xGPIO, ADC, Tx, Rx</p>
+                        <p>4MiB Flash, 11xGPIO, ADC, Tx, Rx</p>
                         <p>Antena PCB</p>
                     </div>
                     <div class="img">
@@ -170,15 +170,15 @@
                     </div>
                     <div class="text">
                         <p class="title">Wemos D1 Mini / Wemos D1 Mini Pro</p>
-                        <p>4MiB Flash, ESP-12F, 8xGPIO, ADC, Tx, Rx</p>
-                        <p>Micro USB, Reset button, Flash mode</p>
+                        <p>4MiB Flash (16MiB - Pro), ESP-12F (ESP8266EX - Pro), 8xGPIO, ADC, Tx, Rx</p>
+                        <p>Micro USB (Mini: CH340, Pro: CP2104), Reset button, Flash mode</p>
                         <p>Antena PCB (Mini), Antena ceramiczna + gniazdo (Pro)</p>
                     </div>
                     <div class="break"></div>
                     <div class="text">
                         <p class="title">NodeMCU V2/V3</p>
                         <p>4MiB Flash, ESP-12E, 8xGPIO, ADC, Tx, Rx</p>
-                        <p>Antena PCB, Micro USB</p>
+                        <p>Antena PCB, Micro USB (V3: CH340, V2: CP2104)</p>
                         <p>Flash Button, Reset Button</p>
                     </div>
                     <div class="img">
@@ -197,11 +197,11 @@
                 </div>
                 <div>
                     <img src="img/esp-12s.png" alt="esp-12s">
-                    <p>ESP-12</p>
+                    <p class="smaller">ESP-12</p>
                 </div>
                 <div>
                     <img src="img/esp-12s-breakout.png" alt="esp-12s breakout">
-                    <p>Breakout</p>
+                    <p class="smaller">Breakout</p>
                 </div>
             </div>
         </section>
@@ -324,30 +324,6 @@
             <section>
                 <img src="img/esp-easy/esp-easy-main.png" alt="ESP Easy Main" width="700">
             </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-config-1.png" alt="Config 1" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-config-2.png" alt="Config 2" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-config-3.png" alt="Config 3" width="700">
-            </section>
-        </section>
-        <section>
-            <h3>ESP Easy - kontrolery</h3>
-            <section>
-                <img src="img/esp-easy/esp-easy-controllers.png" alt="Controllers" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-controllers-protocols.png" alt="Controllers protocols" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-controller-mqtt-1.png" alt="MQTT 1" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-controller-mqtt-2.png" alt="MQTT 2" width="700">
-            </section>
         </section>
         <section>
             <h3>ESP Easy - hardware</h3>
@@ -356,42 +332,6 @@
             </section>
             <section>
                 <img src="img/esp-easy/esp-easy-hardware-2.png" alt="HW 2" width="700">
-            </section>
-        </section>
-        <section>
-            <h3>ESP Easy - devices</h3>
-            <section>
-                <img src="img/esp-easy/esp-easy-devices-1.png" alt="Devices" width="700">
-            </section>
-            <section>
-                <p class="other-color-3">Sterowanie pompą CO</p>
-                <img src="img/esp-easy/esp-easy-devices-co.png" alt="Devices co" width="700">
-            </section>
-            <section>
-                <p class="other-color">Sterowanie napędem bramy</p>
-                <img src="img/esp-easy/esp-easy-devices-garaz.png" alt="Devices garaz" width="700">
-            </section>
-            <section>
-                <p class="other-color-2">Podlewanie ogrodu</p>
-                <img src="img/esp-easy/esp-easy-devices-podlewacz.png" alt="Devices podlewacz" width="700">
-            </section>
-        </section>
-        <section>
-            <h3>ESP Easy - pozostałe</h3>
-            <section>
-                <img src="img/esp-easy/esp-easy-notifications.png" alt="Notifications" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-tools-1.png" alt="Tools 1" width="600">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-tools-2.png" alt="Tools 2" width="600">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-tools-3.png" alt="Tools 3" width="600">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-tools-4.png" alt="Tools 4" width="600">
             </section>
         </section>
         <section>
@@ -515,7 +455,65 @@
           Config at Web 
           MQTT
         </section>
-
+<!--
+        <section>
+            <h1>BACKUP</h1>
+        </section>
+        <section>
+            <h3>ESP Easy</h3>
+            <section>
+                <img src="img/esp-easy/esp-easy-config-1.png" alt="Config 1" width="700">
+            </section>
+            <section>
+                <img src="img/esp-easy/esp-easy-config-2.png" alt="Config 2" width="700">
+            </section>
+            <section>
+                <img src="img/esp-easy/esp-easy-config-3.png" alt="Config 3" width="700">
+            </section>
+            <section>
+                <img src="img/esp-easy/esp-easy-controllers.png" alt="Controllers" width="700">
+            </section>
+            <section>
+                <img src="img/esp-easy/esp-easy-controllers-protocols.png" alt="Controllers protocols" width="700">
+            </section>
+            <section>
+                <img src="img/esp-easy/esp-easy-controller-mqtt-1.png" alt="MQTT 1" width="700">
+            </section>
+            <section>
+                <img src="img/esp-easy/esp-easy-controller-mqtt-2.png" alt="MQTT 2" width="700">
+            </section>
+            <section>
+                <img src="img/esp-easy/esp-easy-notifications.png" alt="Notifications" width="700">
+            </section>
+            <section>
+                <img src="img/esp-easy/esp-easy-devices-1.png" alt="Devices" width="700">
+            </section>
+            <section>
+                <p class="other-color-3">Sterowanie pompą CO</p>
+                <img src="img/esp-easy/esp-easy-devices-co.png" alt="Devices co" width="700">
+            </section>
+            <section>
+                <p class="other-color">Sterowanie napędem bramy</p>
+                <img src="img/esp-easy/esp-easy-devices-garaz.png" alt="Devices garaz" width="700">
+            </section>
+            <section>
+                <p class="other-color-2">Podlewanie ogrodu</p>
+                <img src="img/esp-easy/esp-easy-devices-podlewacz.png" alt="Devices podlewacz" width="700">
+            </section>
+            <section>
+                <img src="img/esp-easy/esp-easy-tools-1.png" alt="Tools 1" width="600">
+            </section>
+            <section>
+                <img src="img/esp-easy/esp-easy-tools-2.png" alt="Tools 2" width="600">
+            </section>
+            <section>
+                <img src="img/esp-easy/esp-easy-tools-3.png" alt="Tools 3" width="600">
+            </section>
+            <section>
+                <img src="img/esp-easy/esp-easy-tools-4.png" alt="Tools 4" width="600">
+            </section>
+        </section>
+-->
     </div>
 </div>
 
