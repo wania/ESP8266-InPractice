@@ -224,13 +224,27 @@
         </section>
 
         <section>
-          <h1>Flashowanie</h1>
-          <!-- TODO (Maciek)  zamienić tekst na grafiki -->
-          <p>Moduły z gniazdem MicroUSB (NodeMCU, Wemos) wykrywają flashowanie i same przestawiają moduł ESP w
-            odpowiedni tryb.</p>
-          <!-- Flash mode button -->
-          <p class="other-color fragment">Moduły ESP-xx wymagają odpowiedniej konfiguracji podczas włączenia
-            zasilania lub resetu aby przejść w tryb flash.</p>
+          <h2>Flashowanie</h2>
+          <div class="tiles align-left">
+            <div class="img big">
+              <img src="img/wemos-d1-streight.png" alt="wemos">
+            </div>
+            <div class="text big">
+              <p class="title">Flashowanie przez USB:</p>
+              <p>automatyczny flash-mode + reset</p>
+            </div>
+            <div class="break"></div>
+            <div class="text big">
+              <p class="title">Flashowanie przez Tx/Rx (serial):</p>
+              <ul>
+                <li>wymagają odpowiedniej konfiguracji pinów,</li>
+                <li>najlepiej zbudować programator.</li>
+              </ul>
+            </div>
+            <div class="img big">
+              <img src="img/esp-programmer.png" alt="esp programmer">
+            </div>
+          </div>
         </section>
         <section>
           <!-- TODO (Marcin) zamiast schematu daj schemat flashowanie SONOFF/SHELLY -->
