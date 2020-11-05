@@ -99,39 +99,44 @@
               </ul>
             </div>
             <div class="break"></div>
-          </div>
-        </section>
-        <section>
-          <h3>Możliwości układu:</h3>
-          <ul>
-            <li>WiFi i stos TCP/IP,</li>
-            <li>Procesor RISC 32-bit, 80MHz,</li>
-            <li>Pamięć RAM: 32KiB kod, 80KiB dane,</li>
-            <li>Pamięć Flash: 512KiB, 1MiB, 4MiB, 16MiB - zależnie od wersji,</li>
-            <li>16 GPIO, z reguły dostępne 10, 5 dostępne w pełni,</li>
-            <li>jeden port ADC (rozdzielczość 10-cio bitowa).</li>
-          </ul>
-          <p>TODO - porównać z AVR (Maciek)</p>
-        </section>
-        <section>
-          <h3>ESP-8266 - wyjścia</h3>
-          <div class="flex">
-            <img src="img/esp-12f-pinout.jpg" alt="ESP-12F pinout">
-            <div class="medium-size">
+            <div class="subtitle">Możliwości układu</div>
+            <div class="break"></div>
+            <div class="text">
               <ul>
-                <li>VCC, GND - zasilanie,</li>
-                <li>RESET,</li>
-                <li>ADC - port analogowy, toleruje 0.0-1.0V,</li>
-                <li>EN/CH_PD - chip wake up,</li>
-                <li>TXD,RXD - interfejs SPI (wgrywanie firmware'u, komunikacja szeregowa),</li>
-                <li>GPIOx - cyfrowe piny we/wy.</li>
+                <li>WiFi i stos TCP/IP,</li>
+                <li>procesor RISC 32-bit, 80MHz,</li>
+                <li>pamięć RAM: 32KiB kod, 80KiB dane,</li>
+              </ul>
+            </div>
+            <div class="text">
+              <ul>
+                <li>pamięć Flash: 512KiB, 1MiB, 4MiB, 16MiB - zależnie od wersji,</li>
+                <li>16 GPIO, z reguły dostępne 10, 5 dostępne w pełni,</li>
+                <li>jeden port ADC (rozdzielczość 10-cio bitowa).</li>
+              </ul>
+            </div>
+            <div class="break"></div>
+            <div class="subtitle">Atmel ATMEGA-328P-PU</div>
+            <div class="break"></div>
+            <div class="img big">
+              <img src="img/640px-ATMEGA328P-PU%20(1).jpg" alt="Atmel">
+            </div>
+            <div class="text">
+              <ul>
+                <li>Procesor AVR 8-bit, 20MHz; pamięć RAM: 2KiB;</li>
+                <li>pamięć Flash 32KiB; EEPROM 1KiB;</li>
+                <li>23 GPIO, w tym 6 wejść ADC (10 bitów);</li>
+                <li>brak wbudowanego interfejsu radiowego.</li>
               </ul>
             </div>
           </div>
         </section>
         <section>
-          <h3>ESP-8266 - użyteczność portów GPIO</h3>
-          <img src="img/esp-8266-pins.png" alt="ESP 8266 Pins" height="480">
+          <h3>ESP-8266 - wyjścia</h3>
+          <div class="flex">
+            <img src="img/esp-12f-pinout.jpg" alt="ESP-12F pinout">
+            <img src="img/esp-8266-pins.png" alt="ESP 8266 Pins" height="350">
+          </div>
         </section>
 
         <section>
