@@ -84,8 +84,17 @@ span.border {
     height: 95px;
     margin: 0;
 }
-.reveal section div.tiles > div > p {
+.reveal section div.tiles > div.big img {
+    height: 180px;
+}
+.reveal section div.tiles > div > p,
+.reveal section div.tiles > div li {
     font-size: large;
+    margin: 2px;
+}
+.reveal section div.tiles > div.big > p,
+.reveal section div.tiles > div.big li {
+    font-size: xx-large;
     margin: 2px;
 }
 .reveal section div.tiles > div.text {
