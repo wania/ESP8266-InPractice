@@ -25,7 +25,7 @@
         </section>
 
         <section>
-          <p>T.b.d. - diagram wstępny (Smart Home, ...)</p>
+          <img src="img/smart-home.png">
         </section>
 
         <section>
@@ -247,16 +247,16 @@
           </div>
         </section>
         <section>
-          <!-- TODO (Marcin) zamiast schematu daj schemat flashowanie SONOFF/SHELLY -->
-          <h3>Flashowanie ESP-xx</h3>
-          <img src="img/ESP8266-programmer-bare_schem.png" alt="ESP-8266 Flashing">
-          <!-- GPIO0 to GND = flashmode -->
+          <h3 class="title">Flashowanie ESP-XX</h3>
+          <!--TODO: Fix layout (Marcin)
+          <div class="align-left">
+              <p>Sonoff Basic PINy</p>
+              <img src="img/sonoff-basic-flashing.jpg" class="align-left" height="250">
+              <p class="title">USB-Serial Konverter (CH341)</p>
+              <img src="img/ch341.jpg" class="align-left" height="200">
+          </div>
         </section>
-        <section>
-          <!-- TODO (Marcin) najlepiej wrzucić to do slajdu wyżej -->
-          <h3>Programator (ch341)</h3>
-          <img src="img/ch341.jpg" width="500"></img>
-        </section>
+
         <section>
           <h2>Firmware</h2>
           <ul>
@@ -510,7 +510,9 @@
           <pre><code data-trim data-noescape style="font-size: 0.5em;">
             SwitchMode1 1
             SwitchTopic 0
-            Rule1 on Switch1#state=1 do publish stat/tasmota_0F93E7/PIR1 ON endon on Switch1#state=0 do Publish stat/tasmota_0F93E7/PIR1 OFF endon
+            Rule1 
+              ON Switch1#state=1 do publish stat/tasmota_0F93E7/PIR1 ON ENDON 
+              ON Switch1#state=0 do publish stat/tasmota_0F93E7/PIR1 OFF ENDON
             Rule1 1
           </code></pre>
         </section>
