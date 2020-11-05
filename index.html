@@ -1,8 +1,9 @@
 <!doctype html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>Praktyczne zastosowania ESP8266</title>
 
@@ -13,227 +14,228 @@
 
     <!-- Theme used for syntax highlighted code -->
     <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
-</head>
-<body>
-<div class="reveal">
-    <div class="slides">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
         <section class="title" data-background-image="img/cia-out.jpg" data-background-opacity="0.6">
-            <h3 class="title">Praktyczne zastosowania ESP8266</h3>
-            <p>- Maciej Małecki -</p>
-            <p>- Marcin Iwanczewski -</p>
+          <h3 class="title">Praktyczne zastosowania ESP8266</h3>
+          <p>- Maciej Małecki -</p>
+          <p>- Marcin Iwanczewski -</p>
         </section>
 
         <section>
-            <p>T.b.d. - diagram wstępny (Smart Home, ...)</p>
+          <p>T.b.d. - diagram wstępny (Smart Home, ...)</p>
         </section>
 
         <!-- TODO (Marcin) skonsolidować w jeden-dwa slajdy -->
-         <section>
-            <h3 class="title">Wersje pudełkowe</h3>
-         </section>
-
-         <section>
-            <h3 class="title">Sonoff Basic</h3>
-            <img src="img/sonoff-basic.jpg" height="250">
-            <img src="img/sonoff-basic-diy.jpg" height="250">
-            <p>TODO: Zrobić fotki urządzeń w użyciu</p>
-         </section>
-         <!--
-         <section>
-            <h3 class="title">Sonoff Basic (R1) piny</h3>
-            <img src="img/sonoff-basic-pinout.jpg" height="300">
-         </section>
-         -->
-         <section>
-            <h3 class="title">Sonoff 4CH</h3>
-            <img src="img/sonoff-4ch.jpg" height="400">
-         </section>
-         <!--
-         <section>
-            <h3 class="title">Sonoff 4CH piny</h3>
-            <img src="img/sonoff4ch_pins.jpg" height="400">
-         </section>
-         -->
-         <section>
-            <h3 class="title">Sonoff Slampher</h3>
-            <img src="img/sonoff-slampher.jpg" height="400">
-         </section>
-         <!--
-         <section>
-            <h3 class="title">Sonoff Slampher piny</h3>
-            <img src="img/sonoff-slampher-pins.jpg" height="400">
-         </section>
-         -->
-         <section>
-            <h3 class="title">Shelly1</h3>
-            <img src="img/shelly-01.jpg" height="400">
-        </section>
-        <!--
         <section>
-            <h3 class="title">Shelly1 piny</h3>
-            <img src="img/shelly1_pinout.jpg" height="400">
+          <h3 class="title">Wersje pudełkowe</h3>
+          <div class="align-left">
+            <div class="tiles">
+              <div class="break"></div>
+              <div class="img">
+                <img src="img/sonoff-basic.jpg">
+              </div>
+              <div class="text">
+                <p class="title">Sonoff Basic</p>
+                <p>Zasilanie: 90-250v AC 50/60Hz</p>
+                <p>Maksymalne obciążenie: 10A/2200W</p>
+                <p>1 przekaźnik</p>
+              </div>
+              <div class="img">
+                <img src="img/sonoff-basic-diy.jpg" alt="">
+              </div>
+              <div class="break"></div>
+              <div class="img">
+                <img src="img/sonoff-4ch.jpg" alt="esp-07">
+              </div>
+              <div class="text">
+                <p class="title">Sonoff 4CH</p>
+                <p>Zasilanie: 100-240V AC 50/60Hz
+                <p>Maksymalne obciążenie: 10A/2200W/Przekaźnik 16A/3500W/Total</p>
+                <p>4 przekaźniki</p>
+                <p>Mocowanie na szynie DIN</p>
+              </div>
+              <div class="img">
+                <img src="img/sonoff-slampher.jpg" alt="esp-12s">
+              </div>
+              <div class="text">
+                <p class="title">Sonoff Slampher</p>
+                <p>todo: specyfikacja</p>
+              </div>
+              <div class="break"></div>
+              <div class="img">
+                <img src="img/shelly-01.jpg">
+              </div>
+              <div class="text">
+                <p class="title">Shelly 1</p>
+                <p>todo: specyfikacja</p>
+              </div>
+            </div>
+          </div>
         </section>
-        -->
-
         <!--
          TODO (Maciek) skonsolidować
         -->
         <section>
-            <h3>Historia układu</h3>
-            <div class="flex">
-                <img src="img/esp-01s.jpg" alt="ESP-01" width="200">
-                <div>
-                    <ul>
-                        <li>ESP-01</li>
-                        <li>Ai-Thinker</li>
-                        <li>2014</li>
-                    </ul>
-                </div>
+          <h3>Historia układu</h3>
+          <div class="flex">
+            <img src="img/esp-01s.jpg" alt="ESP-01" width="200">
+            <div>
+              <ul>
+                <li>ESP-01</li>
+                <li>Ai-Thinker</li>
+                <li>2014</li>
+              </ul>
             </div>
+          </div>
         </section>
         <section>
-            <h3>Możliwości układu:</h3>
-            <ul>
-                <li>WiFi i stos TCP/IP,</li>
-                <li>Procesor RISC 32-bit, 80MHz,</li>
-                <li>Pamięć RAM: 32KiB kod, 80KiB dane,</li>
-                <li>Pamięć Flash: 512KiB, 1MiB, 4MiB, 16MiB - zależnie od wersji,</li>
-                <li>16 GPIO, z reguły dostępne 10, 5 dostępne w pełni,</li>
-                <li>jeden port ADC (rozdzielczość 10-cio bitowa).</li>
-            </ul>
-            <p>TODO - porównać z AVR (Maciek)</p>
+          <h3>Możliwości układu:</h3>
+          <ul>
+            <li>WiFi i stos TCP/IP,</li>
+            <li>Procesor RISC 32-bit, 80MHz,</li>
+            <li>Pamięć RAM: 32KiB kod, 80KiB dane,</li>
+            <li>Pamięć Flash: 512KiB, 1MiB, 4MiB, 16MiB - zależnie od wersji,</li>
+            <li>16 GPIO, z reguły dostępne 10, 5 dostępne w pełni,</li>
+            <li>jeden port ADC (rozdzielczość 10-cio bitowa).</li>
+          </ul>
+          <p>TODO - porównać z AVR (Maciek)</p>
         </section>
         <section>
-            <h3>ESP-8266 - wyjścia</h3>
-            <div class="flex">
-                <img src="img/esp-12f-pinout.jpg" alt="ESP-12F pinout">
-                <div class="medium-size">
-                    <ul>
-                        <li>VCC, GND - zasilanie,</li>
-                        <li>RESET,</li>
-                        <li>ADC - port analogowy, toleruje 0.0-1.0V,</li>
-                        <li>EN/CH_PD - chip wake up,</li>
-                        <li>TXD,RXD - interfejs SPI (wgrywanie firmware'u, komunikacja szeregowa),</li>
-                        <li>GPIOx - cyfrowe piny we/wy.</li>
-                    </ul>
-                </div>
+          <h3>ESP-8266 - wyjścia</h3>
+          <div class="flex">
+            <img src="img/esp-12f-pinout.jpg" alt="ESP-12F pinout">
+            <div class="medium-size">
+              <ul>
+                <li>VCC, GND - zasilanie,</li>
+                <li>RESET,</li>
+                <li>ADC - port analogowy, toleruje 0.0-1.0V,</li>
+                <li>EN/CH_PD - chip wake up,</li>
+                <li>TXD,RXD - interfejs SPI (wgrywanie firmware'u, komunikacja szeregowa),</li>
+                <li>GPIOx - cyfrowe piny we/wy.</li>
+              </ul>
             </div>
+          </div>
         </section>
         <section>
-            <h3>ESP-8266 - użyteczność portów GPIO</h3>
-            <img src="img/esp-8266-pins.png" alt="ESP 8266 Pins" height="480">
+          <h3>ESP-8266 - użyteczność portów GPIO</h3>
+          <img src="img/esp-8266-pins.png" alt="ESP 8266 Pins" height="480">
         </section>
 
         <section>
-            <h3>Dostępne modele (wybór)</h3>
-            <div class="align-left">
-                <div class="tiles">
-                    <div class="subtitle">Moduły Arduino/castellated</div>
-                    <div class="break"></div>
-                    <div class="img">
-                        <img src="img/esp-01.jpg" alt="esp-01">
-                    </div>
-                    <div class="text">
-                        <p class="title">ESP-01</p>
-                        <p>512KiB Flash, 2xGPIO, Tx, Rx</p>
-                    </div>
-                    <div class="img">
-                        <img src="img/esp-01s.jpg" alt="esp-01s">
-                    </div>
-                    <div class="text">
-                        <p class="title">ESP-01S</p>
-                        <p>1MiB Flash, 2xGPIO, Tx, Rx</p>
-                    </div>
-                    <div class="break"></div>
-                    <div class="text">
-                        <p class="title">ESP-07</p>
-                        <p>1MiB Flash, 9xGPIO, ADC, Tx, Rx</p>
-                        <p>Antena ceramiczna + gniazdo</p>
-                    </div>
-                    <div class="img">
-                        <img src="img/esp-07.png" alt="esp-07">
-                    </div>
-                    <div class="text">
-                        <p class="title">ESP-12F</p>
-                        <p>4MiB Flash, 11xGPIO, ADC, Tx, Rx</p>
-                        <p>Antena PCB</p>
-                    </div>
-                    <div class="img">
-                        <img src="img/esp-12s.png" alt="esp-12s">
-                    </div>
+          <h3>Dostępne modele (wybór)</h3>
+          <div class="align-left">
+            <div class="tiles">
+              <div class="subtitle">Moduły Arduino/castellated</div>
+              <div class="break"></div>
+              <div class="img">
+                <img src="img/esp-01.jpg" alt="esp-01">
+              </div>
+              <div class="text">
+                <p class="title">ESP-01</p>
+                <p>512KiB Flash, 2xGPIO, Tx, Rx</p>
+              </div>
+              <div class="img">
+                <img src="img/esp-01s.jpg" alt="esp-01s">
+              </div>
+              <div class="text">
+                <p class="title">ESP-01S</p>
+                <p>1MiB Flash, 2xGPIO, Tx, Rx</p>
+              </div>
+              <div class="break"></div>
+              <div class="text">
+                <p class="title">ESP-07</p>
+                <p>1MiB Flash, 9xGPIO, ADC, Tx, Rx</p>
+                <p>Antena ceramiczna + gniazdo</p>
+              </div>
+              <div class="img">
+                <img src="img/esp-07.png" alt="esp-07">
+              </div>
+              <div class="text">
+                <p class="title">ESP-12F</p>
+                <p>4MiB Flash, 11xGPIO, ADC, Tx, Rx</p>
+                <p>Antena PCB</p>
+              </div>
+              <div class="img">
+                <img src="img/esp-12s.png" alt="esp-12s">
+              </div>
 
-                    <div class="break"></div>
-                    <div class="subtitle">Płytki prototypowe</div>
-                    <div class="break"></div>
+              <div class="break"></div>
+              <div class="subtitle">Płytki prototypowe</div>
+              <div class="break"></div>
 
-                    <div class="img">
-                        <img src="img/wemos-d1-mini.png" alt="wemos">
-                    </div>
-                    <div class="img">
-                        <img src="img/wemos-d1-mini-pro.png" alt="NodeMcuPro">
-                    </div>
-                    <div class="text">
-                        <p class="title">Wemos D1 Mini / Wemos D1 Mini Pro</p>
-                        <p>4MiB Flash (16MiB - Pro), ESP-12F (ESP8266EX - Pro), 8xGPIO, ADC, Tx, Rx</p>
-                        <p>Micro USB (Mini: CH340, Pro: CP2104), Reset button, Flash mode</p>
-                        <p>Antena PCB (Mini), Antena ceramiczna + gniazdo (Pro)</p>
-                    </div>
-                    <div class="break"></div>
-                    <div class="text">
-                        <p class="title">NodeMCU V2/V3</p>
-                        <p>4MiB Flash, ESP-12E, 8xGPIO, ADC, Tx, Rx</p>
-                        <p>Antena PCB, Micro USB (V3: CH340, V2: CP2104)</p>
-                        <p>Flash Button, Reset Button</p>
-                    </div>
-                    <div class="img">
-                        <img src="img/nodemcu-v2-v3.png" alt="NodeMcuV2V3">
-                    </div>
-                </div>
+              <div class="img">
+                <img src="img/wemos-d1-mini.png" alt="wemos">
+              </div>
+              <div class="img">
+                <img src="img/wemos-d1-mini-pro.png" alt="NodeMcuPro">
+              </div>
+              <div class="text">
+                <p class="title">Wemos D1 Mini / Wemos D1 Mini Pro</p>
+                <p>4MiB Flash (16MiB - Pro), ESP-12F (ESP8266EX - Pro), 8xGPIO, ADC, Tx, Rx</p>
+                <p>Micro USB (Mini: CH340, Pro: CP2104), Reset button, Flash mode</p>
+                <p>Antena PCB (Mini), Antena ceramiczna + gniazdo (Pro)</p>
+              </div>
+              <div class="break"></div>
+              <div class="text">
+                <p class="title">NodeMCU V2/V3</p>
+                <p>4MiB Flash, ESP-12E, 8xGPIO, ADC, Tx, Rx</p>
+                <p>Antena PCB, Micro USB (V3: CH340, V2: CP2104)</p>
+                <p>Flash Button, Reset Button</p>
+              </div>
+              <div class="img">
+                <img src="img/nodemcu-v2-v3.png" alt="NodeMcuV2V3">
+              </div>
             </div>
+          </div>
         </section>
 
         <section>
-            <h3>Co kupić?</h3>
-            <div class="r-hstack">
-                <div>
-                    <img src="img/wemos-d1-streight.png" alt="Wemos">
-                    <p class="smaller">Wemos D1 Mini</p>
-                </div>
-                <div>
-                    <img src="img/esp-12s.png" alt="esp-12s">
-                    <p class="smaller">ESP-12F/S</p>
-                </div>
-                <div>
-                    <img src="img/esp-12s-breakout.png" alt="esp-12s breakout">
-                    <p class="smaller">Breakout</p>
-                </div>
+          <h3>Co kupić?</h3>
+          <div class="r-hstack">
+            <div>
+              <img src="img/wemos-d1-streight.png" alt="Wemos">
+              <p class="smaller">Wemos D1 Mini</p>
             </div>
+            <div>
+              <img src="img/esp-12s.png" alt="esp-12s">
+              <p class="smaller">ESP-12F/S</p>
+            </div>
+            <div>
+              <img src="img/esp-12s-breakout.png" alt="esp-12s breakout">
+              <p class="smaller">Breakout</p>
+            </div>
+          </div>
         </section>
 
         <section>
-            <h1>Flashowanie</h1>
-            <!-- TODO (Maciek)  zamienić tekst na grafiki -->
-            <p>Moduły z gniazdem MicroUSB (NodeMCU, Wemos) wykrywają flashowanie i same przestawiają moduł ESP w odpowiedni tryb.</p>
-            <!-- Flash mode button -->
-            <p class="other-color fragment">Moduły ESP-xx wymagają odpowiedniej konfiguracji podczas włączenia zasilania lub resetu aby przejść w tryb flash.</p>
+          <h1>Flashowanie</h1>
+          <!-- TODO (Maciek)  zamienić tekst na grafiki -->
+          <p>Moduły z gniazdem MicroUSB (NodeMCU, Wemos) wykrywają flashowanie i same przestawiają moduł ESP w
+            odpowiedni tryb.</p>
+          <!-- Flash mode button -->
+          <p class="other-color fragment">Moduły ESP-xx wymagają odpowiedniej konfiguracji podczas włączenia
+            zasilania lub resetu aby przejść w tryb flash.</p>
         </section>
         <section>
-            <!-- TODO (Marcin) zamiast schematu daj schemat flashowanie SONOFF/SHELLY -->
-            <h3>Flashowanie ESP-xx</h3>
-            <img src="img/ESP8266-programmer-bare_schem.png" alt="ESP-8266 Flashing">
-            <!-- GPIO0 to GND = flashmode -->
+          <!-- TODO (Marcin) zamiast schematu daj schemat flashowanie SONOFF/SHELLY -->
+          <h3>Flashowanie ESP-xx</h3>
+          <img src="img/ESP8266-programmer-bare_schem.png" alt="ESP-8266 Flashing">
+          <!-- GPIO0 to GND = flashmode -->
         </section>
         <section>
-            <!-- TODO (Marcin) najlepiej wrzucić to do slajdu wyżej -->
-            <h3>Programator (ch341)</h3>
-            <img src="img/ch341.jpg" width="500"></img>
+          <!-- TODO (Marcin) najlepiej wrzucić to do slajdu wyżej -->
+          <h3>Programator (ch341)</h3>
+          <img src="img/ch341.jpg" width="500"></img>
         </section>
         <section>
-            <h1>Firmware</h1>
-            <ul>
-                <li>ESP Easy</li>
-                <li>Tasmota</li>
-            </ul>
+          <h1>Firmware</h1>
+          <ul>
+            <li>ESP Easy</li>
+            <li>Tasmota</li>
+          </ul>
         </section>
 
         <!--
@@ -280,119 +282,119 @@
           -->
 
         <section>
-            <h2>ESP Easy</h2>
-            <section>
-                <img src="img/esp-easy/lets-control-it.png" alt="LetsControllIt">
-            </section>
-            <section>
-                <div class="align-left">
-                    <p>Stara dokumentacja:</p>
-                    <a href="https://www.letscontrolit.com/wiki/index.php/Main_Page">https://www.letscontrolit.com/wiki/index.php/Main_Page</a>
-                    <p>Nowa dokumentacja:</p>
-                    <a href="https://espeasy.readthedocs.io/en/latest/">https://espeasy.readthedocs.io/en/latest/</a>
-                </div>
-            </section>
-            <section>
-                <h3 class="other-color-2">Najważniejsze funkcjonalności:</h3>
-                <div class="align-left other-color">
-                    <ul>
-                        <li>interfejs webowy,</li>
-                        <li>konfiguracja połączenia z max. 2 sieciami WiFi,</li>
-                        <li>tryb Access Point,</li>
-                        <li>obsługa wielu rodzajów czujników,</li>
-                        <li>obsługa P2P, REST, MQTT,</li>
-                        <li>wbudowany interpreter języka skryptowego,</li>
-                        <li>obsługa trybu głebokiego uśpienia.</li>
-                    </ul>
-                </div>
-            </section>
+          <h2>ESP Easy</h2>
+          <section>
+            <img src="img/esp-easy/lets-control-it.png" alt="LetsControllIt">
+          </section>
+          <section>
+            <div class="align-left">
+              <p>Stara dokumentacja:</p>
+              <a href="https://www.letscontrolit.com/wiki/index.php/Main_Page">https://www.letscontrolit.com/wiki/index.php/Main_Page</a>
+              <p>Nowa dokumentacja:</p>
+              <a href="https://espeasy.readthedocs.io/en/latest/">https://espeasy.readthedocs.io/en/latest/</a>
+            </div>
+          </section>
+          <section>
+            <h3 class="other-color-2">Najważniejsze funkcjonalności:</h3>
+            <div class="align-left other-color">
+              <ul>
+                <li>interfejs webowy,</li>
+                <li>konfiguracja połączenia z max. 2 sieciami WiFi,</li>
+                <li>tryb Access Point,</li>
+                <li>obsługa wielu rodzajów czujników,</li>
+                <li>obsługa P2P, REST, MQTT,</li>
+                <li>wbudowany interpreter języka skryptowego,</li>
+                <li>obsługa trybu głebokiego uśpienia.</li>
+              </ul>
+            </div>
+          </section>
         </section>
         <section>
-            <h2>ESP Easy - flashowanie</h2>
-            <section>
-                <p class="align-left smaller">Pakiet instalacyjny oprócz obrazów i źródeł, zawiera także niezbędne
-                    oprogramowanie dla systemu Windows.</p>
-                <img src="img/esp-easy/esp-easy-flashing-1.png" alt="Flashing 1">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-flashing-2.png" alt="Flashing 2">
-                <div class="align-left smaller">
-                    <ul>
-                        <li><code>_1M.bin</code> - dla modułów z 1MiB Flash,</li>
-                        <li><code>_4M1M.bin</code> - dla modułów z 4MiB Flash,</li>
-                        <li><code>blank_xxx.bin</code> - gdy coś pójdzie źle,</li>
-                        <li><code>_VCC.bin</code> - obsługa mierzenia VCC z użyciem ADC.</li>
-                    </ul>
-                </div>
-            </section>
-            <section>
-                <p>Pierwsze uruchomienie (AP)</p>
-                <div class="r-hstack">
-                    <img src="img/esp-easy/easy-config-1.png" alt="Config 1">
-                    <img src="img/esp-easy/easy-config-2.png" alt="Config 2">
-                    <img src="img/esp-easy/easy-config-3.png" alt="Config 3">
-                </div>
-            </section>
-            <section>
-                <p>Pierwsze uruchomienie (AP)</p>
-                <img src="img/esp-easy/easy-config-4.png" alt="Config 4" height="400">
-            </section>
+          <h2>ESP Easy - flashowanie</h2>
+          <section>
+            <p class="align-left smaller">Pakiet instalacyjny oprócz obrazów i źródeł, zawiera także niezbędne
+              oprogramowanie dla systemu Windows.</p>
+            <img src="img/esp-easy/esp-easy-flashing-1.png" alt="Flashing 1">
+          </section>
+          <section>
+            <img src="img/esp-easy/esp-easy-flashing-2.png" alt="Flashing 2">
+            <div class="align-left smaller">
+              <ul>
+                <li><code>_1M.bin</code> - dla modułów z 1MiB Flash,</li>
+                <li><code>_4M1M.bin</code> - dla modułów z 4MiB Flash,</li>
+                <li><code>blank_xxx.bin</code> - gdy coś pójdzie źle,</li>
+                <li><code>_VCC.bin</code> - obsługa mierzenia VCC z użyciem ADC.</li>
+              </ul>
+            </div>
+          </section>
+          <section>
+            <p>Pierwsze uruchomienie (AP)</p>
+            <div class="r-hstack">
+              <img src="img/esp-easy/easy-config-1.png" alt="Config 1">
+              <img src="img/esp-easy/easy-config-2.png" alt="Config 2">
+              <img src="img/esp-easy/easy-config-3.png" alt="Config 3">
+            </div>
+          </section>
+          <section>
+            <p>Pierwsze uruchomienie (AP)</p>
+            <img src="img/esp-easy/easy-config-4.png" alt="Config 4" height="400">
+          </section>
         </section>
         <section>
-            <h3>ESP Easy - interfejs webowy</h3>
-            <section>
-                <img src="img/esp-easy/esp-easy-main.png" alt="ESP Easy Main" width="700">
-            </section>
+          <h3>ESP Easy - interfejs webowy</h3>
+          <section>
+            <img src="img/esp-easy/esp-easy-main.png" alt="ESP Easy Main" width="700">
+          </section>
         </section>
         <section>
-            <h3>Stacja pogodowa</h3>
-            <section>
-                <h4>ESP Easy i czujnik BME280</h4>
-                <img src="img/esp-easy/esp-easy-weather-breadboard.png" alt="weather" height="400">
-            </section>
-            <section>
-                <h4>Konfiguracja interfejsu I2C</h4>
-                <img src="img/esp-easy/weather-i2c.png" alt="i2c" height="400">
-            </section>
-            <section>
-                <h4>Konfiguracja urządzenia</h4>
-                <img src="img/esp-easy/weather-device.png" alt="device" height="400">
-            </section>
-            <section>
-                <h4>Sprawdzenie odczytów</h4>
-                <img src="img/esp-easy/weather-readouts.png" alt="readouts" height="400">
-            </section>
-            <section>
-                <h2>MQTT?</h2>
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-controllers.png" alt="controllers" height="450">
-            </section>
-            <section>
-                <img src="img/esp-easy/weather-mqtt-1.png" alt="mqtt1" height="450">
-            </section>
-            <section>
-                <img src="img/esp-easy/weather-mqtt-2.png" alt="mqtt2" height="450">
-            </section>
-            <section>
-                <img src="img/esp-easy/weather-publish.png" alt="publish" height="450">
-            </section>
-            <section>
-                <img src="img/esp-easy/weather-hass.png" alt="publish" height="450">
-            </section>
+          <h3>Stacja pogodowa</h3>
+          <section>
+            <h4>ESP Easy i czujnik BME280</h4>
+            <img src="img/esp-easy/esp-easy-weather-breadboard.png" alt="weather" height="400">
+          </section>
+          <section>
+            <h4>Konfiguracja interfejsu I2C</h4>
+            <img src="img/esp-easy/weather-i2c.png" alt="i2c" height="400">
+          </section>
+          <section>
+            <h4>Konfiguracja urządzenia</h4>
+            <img src="img/esp-easy/weather-device.png" alt="device" height="400">
+          </section>
+          <section>
+            <h4>Sprawdzenie odczytów</h4>
+            <img src="img/esp-easy/weather-readouts.png" alt="readouts" height="400">
+          </section>
+          <section>
+            <h2>MQTT?</h2>
+          </section>
+          <section>
+            <img src="img/esp-easy/esp-easy-controllers.png" alt="controllers" height="450">
+          </section>
+          <section>
+            <img src="img/esp-easy/weather-mqtt-1.png" alt="mqtt1" height="450">
+          </section>
+          <section>
+            <img src="img/esp-easy/weather-mqtt-2.png" alt="mqtt2" height="450">
+          </section>
+          <section>
+            <img src="img/esp-easy/weather-publish.png" alt="publish" height="450">
+          </section>
+          <section>
+            <img src="img/esp-easy/weather-hass.png" alt="publish" height="450">
+          </section>
         </section>
         <section>
-           <a href="https://tasmota.github.io/docs/About/">
-             <img src="img/tasmota.png" width="900">
-           </a>
-           <aside class="notes">
+          <a href="https://tasmota.github.io/docs/About/">
+            <img src="img/tasmota.png" width="900">
+          </a>
+          <aside class="notes">
             Krótko o Historii Tasmoty: Sonoff, MQTT Hack, Tanio ;)
-           </aside>
+          </aside>
         </section>
         <section>
           <section>
             <h3>Tasmota - flashowanie</h3>
-            <div class="flex" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 10pt;">          
+            <div class="flex" style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 10pt;">
               <h5>NIE PRÓBUJ FLASHOWAĆ URZĄDZEŃ PODŁĄCZONYCH DO SIECI 230V!</h5>
               <img src="img/high_voltage_warning.svg" width="150">
             </div>
@@ -400,7 +402,9 @@
               <li>Tasmotizer</li>
               <li>Tasmota PyFlasher</li>
               <li>NodeMCU PyFlasher</li>
-              <a href="https://github.com/espressif/esptool"><li>Esptool.py</li></a>
+              <a href="https://github.com/espressif/esptool">
+                <li>Esptool.py</li>
+              </a>
               <li>Esptool executable</li>
           </section>
           <section>
@@ -409,7 +413,7 @@
           </section>
           <section>
             <h4>esptool.py</h4>
-              <!-- TODO (Maciek) plugin do kodu albo zwiększyć obszar -->
+            <!-- TODO (Maciek) plugin do kodu albo zwiększyć obszar -->
             <pre><code>esptool.py --port /dev/ttyUSB0 read_flash 0x00000 0x100000 image1M.bin</code></pre>
             <pre><code>esptool.py --port /dev/ttyUSB0 erase_flash</code></pre>
             <pre><code>esptool.py --port /dev/ttyUSB0 write_flash -fm dout 0x0 tasmota.bin</code></pre>
@@ -473,7 +477,7 @@
         </section>
         <section>
           <h4>Tasmota - reakcja na ruch (Rule)</h4>
-            <!-- TODO (Marcin) połam kod -->
+          <!-- TODO (Marcin) połam kod -->
           <pre><code data-trim data-noescape style="font-size: 0.5em;">
             SwitchMode1 1
             SwitchTopic 0
@@ -500,93 +504,93 @@
           <h4>Tasmota wizualizacja pomiarów PM</h4>
           <img src="img/tasmota-PMS-results.png" height="600">
         </section>
-<!--
-        <section>
-            <h1>BACKUP</h1>
-        </section>
-        <section>
-            <h3>ESP Easy</h3>
-            <section>
-                <img src="img/esp-easy/esp-easy-config-1.png" alt="Config 1" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-config-2.png" alt="Config 2" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-config-3.png" alt="Config 3" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-controllers.png" alt="Controllers" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-controllers-protocols.png" alt="Controllers protocols" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-controller-mqtt-1.png" alt="MQTT 1" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-controller-mqtt-2.png" alt="MQTT 2" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-hardware-1.png" alt="HW 1" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-hardware-2.png" alt="HW 2" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-notifications.png" alt="Notifications" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-devices-1.png" alt="Devices" width="700">
-            </section>
-            <section>
-                <p class="other-color-3">Sterowanie pompą CO</p>
-                <img src="img/esp-easy/esp-easy-devices-co.png" alt="Devices co" width="700">
-            </section>
-            <section>
-                <p class="other-color">Sterowanie napędem bramy</p>
-                <img src="img/esp-easy/esp-easy-devices-garaz.png" alt="Devices garaz" width="700">
-            </section>
-            <section>
-                <p class="other-color-2">Podlewanie ogrodu</p>
-                <img src="img/esp-easy/esp-easy-devices-podlewacz.png" alt="Devices podlewacz" width="700">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-tools-1.png" alt="Tools 1" width="600">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-tools-2.png" alt="Tools 2" width="600">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-tools-3.png" alt="Tools 3" width="600">
-            </section>
-            <section>
-                <img src="img/esp-easy/esp-easy-tools-4.png" alt="Tools 4" width="600">
-            </section>
-        </section>
--->
+        <!--
+                <section>
+                    <h1>BACKUP</h1>
+                </section>
+                <section>
+                    <h3>ESP Easy</h3>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-config-1.png" alt="Config 1" width="700">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-config-2.png" alt="Config 2" width="700">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-config-3.png" alt="Config 3" width="700">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-controllers.png" alt="Controllers" width="700">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-controllers-protocols.png" alt="Controllers protocols" width="700">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-controller-mqtt-1.png" alt="MQTT 1" width="700">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-controller-mqtt-2.png" alt="MQTT 2" width="700">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-hardware-1.png" alt="HW 1" width="700">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-hardware-2.png" alt="HW 2" width="700">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-notifications.png" alt="Notifications" width="700">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-devices-1.png" alt="Devices" width="700">
+                    </section>
+                    <section>
+                        <p class="other-color-3">Sterowanie pompą CO</p>
+                        <img src="img/esp-easy/esp-easy-devices-co.png" alt="Devices co" width="700">
+                    </section>
+                    <section>
+                        <p class="other-color">Sterowanie napędem bramy</p>
+                        <img src="img/esp-easy/esp-easy-devices-garaz.png" alt="Devices garaz" width="700">
+                    </section>
+                    <section>
+                        <p class="other-color-2">Podlewanie ogrodu</p>
+                        <img src="img/esp-easy/esp-easy-devices-podlewacz.png" alt="Devices podlewacz" width="700">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-tools-1.png" alt="Tools 1" width="600">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-tools-2.png" alt="Tools 2" width="600">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-tools-3.png" alt="Tools 3" width="600">
+                    </section>
+                    <section>
+                        <img src="img/esp-easy/esp-easy-tools-4.png" alt="Tools 4" width="600">
+                    </section>
+                </section>
+        -->
         <!--
          TODO (Maciek) Slajd końcowy: QR code + Q&A
         -->
+      </div>
     </div>
-</div>
 
-<script src="dist/reveal.js"></script>
-<script src="plugin/notes/notes.js"></script>
-<script src="plugin/markdown/markdown.js"></script>
-<script src="plugin/highlight/highlight.js"></script>
-<script>
-    // More info about initialization & config:
-    // - https://revealjs.com/initialization/
-    // - https://revealjs.com/config/
-    Reveal.initialize({
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
         hash: true,
         history: true,
         slideNumber: true,
 
         // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
-    });
-</script>
-</body>
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
