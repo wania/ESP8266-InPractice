@@ -445,9 +445,15 @@
           <section>
             <h4>esptool.py</h4>
             <!-- TODO (Maciek) plugin do kodu albo zwiększyć obszar -->
-            <pre><code>esptool.py --port /dev/ttyUSB0 read_flash 0x00000 0x100000 image1M.bin</code></pre>
-            <pre><code>esptool.py --port /dev/ttyUSB0 erase_flash</code></pre>
-            <pre><code>esptool.py --port /dev/ttyUSB0 write_flash -fm dout 0x0 tasmota.bin</code></pre>
+            <pre>
+              <code data-trim data-noescape style="font-size: 0.8em;">esptool.py --port /dev/ttyUSB0 read_flash 0x00000 0x100000 image1M.bin</code>
+            </pre>
+            <pre>
+              <code data-trim data-noescape style="font-size: 0.8em;">esptool.py --port /dev/ttyUSB0 erase_flash</code>
+            </pre>
+            <pre>
+              <code data-trim data-noescape style="font-size: 0.8em;">esptool.py --port /dev/ttyUSB0 write_flash -fm dout 0x0 tasmota.bin</code>
+            </pre>
             <!--
             <a>flash_mode</a>
             <table style="font-size: 25px;">
