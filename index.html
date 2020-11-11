@@ -26,6 +26,13 @@
 
         <section>
           <img src="img/smart-home.png">
+          <aside class="notes">
+            <ul>
+              <li>Będziemy mówili o sterowaniu urządzeniami (włączy/wyłącz), odczyt właściwości.</li>
+              <li>Łatwy start.</li>
+              <li>ESP8266 jest w większości moich rozwiązań.</li>
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -81,6 +88,12 @@
               </div>
             </div>
           </div>
+          <aside class="notes">
+            <ul>
+              <li>Wszystkie mają ESP = WIFI, świetne do eksperymentów, w ładnych oprawach.</li>
+              <li>Domownicy zadowoleni.</li>
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -258,6 +271,12 @@
               <p class="smallr">USB-Serial Konwerter (CH341)</p>
             </div>
           </div>
+          <aside class="notes">
+            <ul>
+              <li>GPIO-0 do GND przy starcie.</li>
+              <li>RX do TX, TX do RX, VCC 3V</li>
+            </ul>
+          </aside>
         </section>
 
         <section>
@@ -418,7 +437,13 @@
             <img src="img/tasmota.png" width="900">
           </a>
           <aside class="notes">
-            Krótko o Historii Tasmoty: Sonoff, MQTT Hack, Tanio ;)
+            <ul>
+              <li>Dlaczego wybrałem tasmote</li>
+              <li>Krótko o Historii Tasmoty: Sonoff, MQTT Hack, Tanio ;)/</li>
+              <li>On The Air Update!</li>
+              <li>Template konfiguracyjne</li>
+              <li>GNU General Public License v3.0</li>
+            </ul>
           </aside>
         </section>
           <section>
@@ -487,16 +512,21 @@
                 </tbody>
             </table>
             -->
-          </section>
+            <aside class="notes">
+              <ul>
+                <li>Co po poprawnym flashowaniu</li>
+                <li>Konfiguracja poleceniami na konsoli lub WebUI</li>
+              </ul>
+            </aside>
         </section>
-        <!--
-        <section>
-          Tasmota - screen z telefonu (wifi) 
-        </section>
-        -->
         <section>
           <h4>Tasmota - konfiguracja połaczenia WIFI</h4>
           <img src="img/tasmota-wifi.png" height="600">
+          <ul>
+            <li>Acces Point przy braku połączenia z WIFI</li>
+            <li>Sieć niezabezpieczona</li>
+            <li>Zmienić ustawienia WebServera?</li>
+          </ul>
         </section>
         <section>
           <h3>Detektor ruchu w ESP (HC-SR501)</h3>
@@ -538,8 +568,18 @@
           <img src="img/tasmota-pms.png" height="600">
         </section>
         <section>
-          <h4>Tasmota wizualizacja pomiarów PM</h4>
+          <h4>Tasmota - wizualizacja pomiarów PM</h4>
           <img src="img/tasmota-PMS-results.png" height="600">
+        </section>
+        <section>
+          <h4>Tasmota - Odczyt pomiarów MQTT</h4>
+          <pre><code>mosquitto_sub -h HOST -t %PREFIX%/%TOPIC%/SENSOR</code></pre>
+          <aside class="notes">
+            <ul>
+              <li>Domyślnie 300 sec., TelePeriod 10</li>
+              <li>mosquitto_sub -h 192.168.1.120 -t tele/tasmota_0F93E7/SENSOR</li>
+            </ul>
+          </aside>
         </section>
 
         <!-- Slajd końcowy -->
