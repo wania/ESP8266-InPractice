@@ -143,13 +143,13 @@
           </div>
         </section>
         <section>
-          <h3>ESP-8266 - wyjścia</h3>
+          <h3>ESP-8266 - I/O</h3>
           <div class="flex">
             <img src="img/TUc96ug.png" alt="ESP-12F pinout" height="320">
             <img src="img/esp-8266-pins.png" alt="ESP 8266 Pins" height="320">
           </div>
           <p>
-            Poziom napięć: 3.3V, zakres dla ADC: max 1V.
+            Poziom napięć: <span class="other-color-2">3.3V</span>, zakres dla ADC: <span class="other-color">max 1V</span>.
           </p>
 
         </section>
@@ -249,14 +249,14 @@
             <div class="text big">
               <p class="title">Flashowanie przez USB:</p>
               <p>automatyczny flash-mode + reset</p>
+              <p>dobierz dobrze sterownik USB: <span class="other-color-2">CH340</span> lub <span class="other-color-3">CP2104</span></p>
             </div>
             <div class="break"></div>
             <div class="text big">
               <p class="title">Flashowanie przez Tx/Rx (serial):</p>
-              <ul>
-                <li>wymagają odpowiedniej konfiguracji pinów,</li>
-                <li>najlepiej zbudować programator.</li>
-              </ul>
+              <p>wymagają odpowiedniej konfiguracji pinów,</p>
+              <p>najlepiej zbudować programator,</p>
+              <p>sterownik USB - j.w.</p>
             </div>
             <div class="img big">
               <img src="img/esp-programmer.png" alt="esp programmer">
@@ -401,6 +401,9 @@
         </section>
         <section>
           <h3>Stacja pogodowa</h3>
+          <div class="r-hstack">
+            <img src="img/stacja-pogodowa.jpg" alt="Stacja pogodowa">
+          </div>
         </section>
           <section>
             <h4>ESP Easy i czujnik BME280</h4>
@@ -420,20 +423,30 @@
           </section>
           <section>
             <h2>MQTT?</h2>
+            <p>Event broker dla IoT:</p>
+            <p class="other-color">event</p>
+            <p class="other-color-3">topic</p>
+            <p class="other-color-2">subscriber</p>
+            <p class="other-color-4">publisher</p>
           </section>
           <section>
+            <h3>Kontroler MQTT</h3>
             <img src="img/esp-easy/esp-easy-controllers.png" alt="controllers" height="450">
           </section>
           <section>
+            <h3>Kontroler MQTT</h3>
             <img src="img/esp-easy/weather-mqtt-1.png" alt="mqtt1" height="450">
           </section>
           <section>
+            <h3>Kontroler MQTT</h3>
             <img src="img/esp-easy/weather-mqtt-2.png" alt="mqtt2" height="450">
           </section>
           <section>
+            <h3>Publikacja odczytów</h3>
             <img src="img/esp-easy/weather-publish.png" alt="publish" height="450">
           </section>
           <section>
+            <h3>Home Assistant</h3>
             <img src="img/esp-easy/weather-hass.png" alt="publish" height="450">
           </section>
         <section>
