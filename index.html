@@ -474,9 +474,8 @@
               <li>Tasmotizer</li>
               <li>Tasmota PyFlasher</li>
               <li>NodeMCU PyFlasher</li>
-              <a href="https://github.com/espressif/esptool">
-                <li>Esptool.py</li>
-              </a>
+              <li><a href="https://github.com/espressif/esptool">Esptool.py</a></li>
+
               <li>Esptool executable</li>
             </ul>
           </section>
@@ -535,16 +534,64 @@
                 <li>Co po poprawnym flashowaniu</li>
                 <li>Konfiguracja poleceniami na konsoli lub WebUI</li>
               </ul>
+              <a>flash_mode</a>
+              <table class="smaller">
+                <thead>
+                  <tr>
+                    <th>Option</th>
+                    <th>Mode Name</th>
+                    <th>Pins Used</th>
+                    <th>Speed (ESP8266 & ESP32)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>qio</td>
+                    <td>Quad I/O</td>
+                    <td>4 pins used for address & data</td>
+                    <td>Fastest</td>
+                  </tr><tr>
+                    <td>qout</td>
+                    <td>Quad Output</td>
+                    <td>4 pins used for data</td>
+                    <td>Approx 15% slower than qio</td>
+                  </tr><tr>
+                    <td>dio</td>
+                    <td>Dual I/O</td>
+                    <td>2 pins used for address & data</td>
+                    <td>Approx 45% slower than qio</td>
+                  </tr><tr>
+                    <td>dout</td>
+                    <td>Dual Output</td>
+                    <td>2 pins used for data</td>
+                    <td>Approx 50% slower than qio</td>
+                  </tr>
+                </tbody>
+              </table>
             </aside>
         </section>
         <section>
           <h4>Tasmota - konfiguracja połaczenia WIFI</h4>
           <img src="img/tasmota-wifi.png" height="600">
-          <ul>
-            <li>Acces Point przy braku połączenia z WIFI</li>
-            <li>Sieć niezabezpieczona</li>
-            <li>Zmienić ustawienia WebServera?</li>
-          </ul>
+          <aside class="notes">
+            <ul>
+              <li>Acces Point przy braku połączenia z WIFI</li>
+              <li>Sieć niezabezpieczona</li>
+              <li>Zmienić ustawienia WebServera?</li>
+            </ul>
+            <ul>
+              <li>WifiConfig 	0 = disable Wi-Fi Manager and reboot (used with alternate AP)</li>
+              <li>2 = set Wi-Fi Manager as the current configuration tool and start Wi-Fi Manager (web server at 192.168.4.1) for 3 minutes, then reboot and try to connect Wi-Fi network</li>
+              <li>4 = retry other AP without rebooting (default)</li>
+              <li>5 = wait until selected AP is available again without rebooting</li>
+              <li>6 = Wi-Fi parameters can only be entered via commands in the serial console</li>
+              <li>7 = set Wi-Fi Manager (web server at 192.168.4.1) as the current configuration tool restricted to reset settings only.</li>
+              This setting is recommended for devices without an external control/reset button.
+              <li> No longer supported</li>
+              <li>1 = set SmartConfig (Android/iOS) for 3 minutes</li>
+              <li>3 = set WPS for 3 minutes</li>
+            </ul>
+          </aside>
         </section>
         <section>
           <h3>Detektor ruchu w ESP (HC-SR501)</h3>
