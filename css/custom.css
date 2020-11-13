@@ -87,6 +87,7 @@ span.border {
 .reveal section div.tiles > div.big img {
     height: 180px;
 }
+
 .reveal section div.tiles > div > p,
 .reveal section div.tiles > div li {
     font-size: large;
@@ -96,6 +97,9 @@ span.border {
 .reveal section div.tiles > div.big li {
     font-size: xx-large;
     margin: 2px;
+}
+.reveal section div.tiles > div li.big {
+    font-size: xx-large;
 }
 .reveal section div.tiles > div.text {
     flex-grow: 3;
