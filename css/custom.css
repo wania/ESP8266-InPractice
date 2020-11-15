@@ -172,3 +172,8 @@ div.overlay {
     margin-left: 5px;
     margin-right: 5px;
 }
+.reveal .r-hstack.small img {
+    height: 150px;
+    margin-left: 5px;
+    margin-right: 5px;
+}

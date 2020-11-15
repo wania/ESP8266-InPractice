@@ -49,12 +49,7 @@
         <section>
             <h3>Home assistant</h3>
             <div class="r-hstack">
-                <div>
-                    <img src="img/hass-dashboard.png" alt="Dashboard">
-                </div>
-                <div class="fragment">
-                    <img src="img/hass-store.png" alt="Store">
-                </div>
+                <img src="img/hass-dashboard.png" alt="Dashboard">
             </div>
         </section>
 
@@ -115,10 +110,55 @@
                          message: "Wilgotność w łazience: {{ states('sensor.weather_1_hum') }}%"
             </code></pre>
         </section>
+        
+        <section>
+            <h3>Wizualizacja - wykresy</h3>
+            <div class="r-hstack">
+                <img src="img/hass-plots.png" alt="Plots">
+                <img src="img/hass-plots-2.png" alt="Plots2">
+            </div>
+        </section>
+        <section>
+            <h3>Akwizycja i wizualizacja danych - InfluxDB</h3>
+            <pre><code data-trim data-noescape>
+                influxdb:
+                  api_version: 2
+                  ssl: true
+                  host: eu-central-1-1.aws.cloud2.influxdata.com
+                  token: !secret influxdb_token
+                  organization: !secret influxdb_org
+                  bucket: homeassistant
+                  include:
+                    entity_globs:
+                      - sensor.weather_*
+                      - sensor.temp_wody
+                      - sensor.garden_*
+                      - sensor.garage_*
+            </code></pre>
+        </section>
+        <section>
+            <div class="r-hstack">
+                <img src="img/influx-db.png" alt="InfluxDB">
+            </div>
+        </section>
+
 
         <section>
-            <h3>Najważniejszy dodatek</h3>
-            <img src="img/hass-mqtt.png" alt="MQTT">
+            <h3>Najważniejsze dodatki</h3>
+            <p>Home Assistant posiada Plugin-Store</p>
+            <div class="r-vstack">
+
+            <div class="r-hstack small">
+                <img src="img/hass/addon-mqtt.png" alt="">
+                <img src="img/hass/addon-influx-db.png" alt="">
+                <img src="img/hass/addon-grafana.png" alt="">
+            </div>
+            <div class="r-hstack small">
+                <img src="img/hass/addon-fileeditor.png" alt="">
+                <img src="img/hass/addon-chrony.png" alt="Chrony">
+                <img src="img/hass/addon-ssh.png" alt="SSH">
+            </div>
+            </div>
         </section>
 
         <section>
