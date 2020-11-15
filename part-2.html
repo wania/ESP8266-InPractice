@@ -109,6 +109,148 @@
             <!-- Marcin -->
         </section>
 
+
+        <section>
+            <h3>TODO: MQTT</h3>
+            <!-- Marcin -->
+        </section>
+
+        <section>
+            <h3>Tasmota</h3>
+            <h3>Overview projektów</h3>
+            <ul>
+                <li>Wentylowana szafa na mopa</li>
+                <li>"Follow me bed" - oświetlenie drogi do łóżka (Rules vs HA Automation)</li>
+                <li>Łącznik schodowy "na sterydach"</li>
+                <li>RF gateway</li>
+            </ul>
+            <!-- Marcin -->
+        </section>
+
+        <section>
+            <h3>PIR z dowolnym czasem opożnienia włączenia</h3>
+            <img src="img/ESP-PIR-WS2812.png" width="900">
+        </section>
+
+        <section>
+            <h3>PIR wygląd zewnętrzny</h3>
+          <div class="r-hstack">
+            <div>
+              <img src="img/PIR-real-front.jpg">
+            </div>
+            <div>
+              <img src="img/PIR-real-back.jpg">
+            </div>
+            <div>
+              <img src="img/PIR-real-case.jpg">
+            </div>
+          </div>
+        </section>
+
+        <section>
+            <h3>PIR - Konfiguracja w Tasmota</h3>
+            <img src="img/PIR-Tasmota-config.png" width="290">
+        </section>
+
+        <section>
+            <h3>PIR - Opóźnienie w Tasmota</h3>
+            <pre><code>Rule1 on Switch1#state=1 do publish bedroom.pir.01/stat/MOTION ON;
+RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF endon
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>PIR - HomeAssistant podstawowa konfiguracja</h3>
+            <pre><code>
+              - platform: mqtt
+                name: "Bed strip left"
+                state_topic: "bedroom.pir.01/tele/STATE"
+                command_topic: "bedroom.pir.01/cmnd/POWER"
+                availability_topic: "bedroom.pir.01/tele/LWT"
+                payload_on: "ON"
+                payload_off: "OFF"
+                retain: false
+                icon: mdi:led-strip
+            </code></pre>
+        </section>
+        <section>
+          <pre><code>Rule1 on Switch1#state=1 do publish bedroom.pir.01/stat/MOTION ON endon
+      on switch1#state=0 do publish bedroom.pir.01/stat/MOTION OFF endon</code></pre>
+          <h3>PIR - HomeAssistant Automation (Web UI)</h3>
+          <img src="img/HA-Automation-pir.png" width="800">
+        </section>
+      <section>
+        <h3>PIR - HomeAssistant Automation (yaml)</h3>
+        <pre><code>- id: ed99a146147842d48e6479e41f4e6c62
+alias: Turn on left bedstrip when there is movement
+trigger:
+  - entity_id: binary_sensor.bedroom_pir_sensor
+    platform: state
+    to: 'on'
+  action:
+  - alias: ''
+    data:
+      entity_id: light.bedroom_left_pir_switch
+    service: homeassistant.turn_on
+
+- id: b92a6c75c2ed4a94a49e758a3db6228f
+  alias: Turn off left bedstrip 10 seconds after last movement
+  trigger:
+  - entity_id: binary_sensor.bedroom_pir_sensor
+    for: 0:00:10
+    platform: state
+    to: 'off'
+  action:
+  - data:
+    entity_id: light.bedroom_left_pir_switch
+    service: homeassistant.turn_off
+        </code></pre>
+      </section>
+
+      <section>
+          <h3>Sonoff RF 433 Bridge </h3>
+          <img src="img/sonoff-rf-gateway.jpg">
+      </section>
+      <section>
+        <h3>Sonoff RF 433 Bridge - flashowanie</h3>
+        <img src="img/sonoff-rf-bridge-pins.jpg" width="600">
+      </section>
+      <section>
+        <h3>Sonoff RF Bridge - Konfiguracja Tasmota</h3>
+      </section>
+      <section>
+        <h3>Sonoff RF Bridge - Pilot</h3>
+        <div class="r-hstack">
+          <div>
+            <img src="img/sonoff-rf-remote-01.jpg">
+          </div>
+          <div>
+            <img src="img/sonoff-rf-remote-02.jpg">
+          </div>
+        </div>
+      </section>
+      <section>
+        <h3>Sonoff RF Rule</h3>
+        <pre><code>Rule1 on RfReceived#Data do publish rainbow.lr/cmd/rfcode/%value% ON endon</code></pre>
+      </section>
+      <section>
+        <h3>Sonoff RF - HomeAssistant</h3>
+        <pre><code>- platform: mqtt
+  name: "RF Switch 01"
+  state_topic: "rainbow.lr/cmd/rfcode/F26A9C"
+        </code></pre>
+        <pre><code>- id: '1588080407317'
+  alias: RF  Movies
+  description: ''
+  trigger:
+  - payload: 'ON'
+    platform: mqtt
+    topic: rainbow.lr/cmd/rfcode/F26A9C
+  condition: []
+  action:
+  - scene: scene.movies</code></pre>
+      </section>
+
         <section>
             <h2>ESP Easy</h2>
             <h4>Przegląd projektów (Maciek)</h4>
@@ -349,150 +491,7 @@
                 <img src="img/hass-plots.png" alt="Plots">
                 <img src="img/hass-plots-2.png" alt="Plots2">
             </div>
-            <h3>Najważniejszy dodatek</h3>
-            <img src="img/hass-mqtt.png" alt="MQTT">
         </section>
-
-        <section>
-            <h3>TODO: MQTT</h3>
-            <!-- Marcin -->
-        </section>
-
-        <section>
-            <h3>Tasmota</h3>
-            <h3>Overview projektów</h3>
-            <ul>
-                <li>Wentylowana szafa na mopa</li>
-                <li>"Follow me bed" - oświetlenie drogi do łóżka (Rules vs HA Automation)</li>
-                <li>Łącznik schodowy "na sterydach"</li>
-                <li>RF gateway</li>
-            </ul>
-            <!-- Marcin -->
-        </section>
-
-        <section>
-            <h3>PIR z dowolnym czasem opożnienia włączenia</h3>
-            <img src="img/ESP-PIR-WS2812.png" width="900">
-        </section>
-
-        <section>
-            <h3>PIR wygląd zewnętrzny</h3>
-          <div class="r-hstack">
-            <div>
-              <img src="img/PIR-real-front.jpg">
-            </div>
-            <div>
-              <img src="img/PIR-real-back.jpg">
-            </div>
-            <div>
-              <img src="img/PIR-real-case.jpg">
-            </div>
-          </div>
-        </section>
-
-        <section>
-            <h3>PIR - Konfiguracja w Tasmota</h3>
-            <img src="img/PIR-Tasmota-config.png" width="290">
-        </section>
-
-        <section>
-            <h3>PIR - Opóźnienie w Tasmota</h3>
-            <pre><code>Rule1 on Switch1#state=1 do publish bedroom.pir.01/stat/MOTION ON;
-RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF endon
-            </code></pre>
-        </section>
-
-        <section>
-            <h3>PIR - HomeAssistant podstawowa konfiguracja</h3>
-            <pre><code>
-              - platform: mqtt
-                name: "Bed strip left"
-                state_topic: "bedroom.pir.01/tele/STATE"
-                command_topic: "bedroom.pir.01/cmnd/POWER"
-                availability_topic: "bedroom.pir.01/tele/LWT"
-                payload_on: "ON"
-                payload_off: "OFF"
-                retain: false
-                icon: mdi:led-strip
-            </code></pre>
-        </section>
-        <section>
-          <pre><code>Rule1 on Switch1#state=1 do publish bedroom.pir.01/stat/MOTION ON endon
-      on switch1#state=0 do publish bedroom.pir.01/stat/MOTION OFF endon</code></pre>
-          <h3>PIR - HomeAssistant Automation (Web UI)</h3>
-          <img src="img/HA-Automation-pir.png" width="800">
-        </section>
-      <section>
-        <h3>PIR - HomeAssistant Automation (yaml)</h3>
-        <pre><code>- id: ed99a146147842d48e6479e41f4e6c62
-alias: Turn on left bedstrip when there is movement
-trigger:
-  - entity_id: binary_sensor.bedroom_pir_sensor
-    platform: state
-    to: 'on'
-  action:
-  - alias: ''
-    data:
-      entity_id: light.bedroom_left_pir_switch
-    service: homeassistant.turn_on
-
-- id: b92a6c75c2ed4a94a49e758a3db6228f
-  alias: Turn off left bedstrip 10 seconds after last movement
-  trigger:
-  - entity_id: binary_sensor.bedroom_pir_sensor
-    for: 0:00:10
-    platform: state
-    to: 'off'
-  action:
-  - data:
-    entity_id: light.bedroom_left_pir_switch
-    service: homeassistant.turn_off
-        </code></pre>
-      </section>
-
-      <section>
-          <h3>Sonoff RF 433 Bridge </h3>
-          <img src="img/sonoff-rf-gateway.jpg">
-      </section>
-      <section>
-        <h3>Sonoff RF 433 Bridge - flashowanie</h3>
-        <img src="img/sonoff-rf-bridge-pins.jpg" width="600">
-      </section>
-      <section>
-        <h3>Sonoff RF Bridge - Konfiguracja Tasmota</h3>
-      </section>
-      <section>
-        <h3>Sonoff RF Bridge - Pilot</h3>
-        <div class="r-hstack">
-          <div>
-            <img src="img/sonoff-rf-remote-01.jpg">
-          </div>
-          <div>
-            <img src="img/sonoff-rf-remote-02.jpg">
-          </div>
-        </div>
-      </section>
-      <section>
-        <h3>Sonoff RF Rule</h3>
-        <pre><code>Rule1 on RfReceived#Data do publish rainbow.lr/cmd/rfcode/%value% ON endon</code></pre>
-      </section>
-      <section>
-        <h3>Sonoff RF - HomeAssistant</h3>
-        <pre><code>- platform: mqtt
-  name: "RF Switch 01"
-  state_topic: "rainbow.lr/cmd/rfcode/F26A9C"
-        </code></pre>
-        <pre><code>- id: '1588080407317'
-  alias: RF  Movies
-  description: ''
-  trigger:
-  - payload: 'ON'
-    platform: mqtt
-    topic: rainbow.lr/cmd/rfcode/F26A9C
-  condition: []
-  action:
-  - scene: scene.movies</code></pre>
-      </section>
 
         <section>
             <h3>Akwizycja i wizualizacja danych - InfluxDB</h3>
