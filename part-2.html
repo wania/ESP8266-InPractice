@@ -57,7 +57,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section>
             <h3>Sensor pogodowy (przykład)</h3>
             <pre><code data-trim data-noescape>
@@ -73,6 +73,21 @@
                    device_class: "humidity"
                    unit_of_measurement: "%"
             </code></pre>
+        </section>
+        <section>
+            <h3>Wizualizacja (Lovelace)</h3>
+            <div class="r-hstack">
+                <img src="img/esp-easy/weather-hass.png" alt="hass">
+            </div>
+        </section>
+
+        <section>
+            <h3>Powiadomienia...</h3>
+            <div class="r-hstack">
+                <img src="img/hass-notifications.png" alt="Nots">
+                <img src="img/hass-notifications-2.png" alt="Nots">
+                <img src="img/hass-notifications-3.png" alt="Nots">
+            </div>
         </section>
         <section>
             <h3>Powiadomienia (Slack)</h3>
@@ -100,7 +115,7 @@
                          message: "Wilgotność w łazience: {{ states('sensor.weather_1_hum') }}%"
             </code></pre>
         </section>
-        
+
         <section>
             <h3>Najważniejszy dodatek</h3>
             <img src="img/hass-mqtt.png" alt="MQTT">
@@ -115,11 +130,11 @@
             <h3>Tasmota</h3>
             <h3>Overview projektów</h3>
             <ul>
-              <li>Wentylowana szafa na mopa</li>
-              <li>"Follow me bed" - oświetlenie drogi do łóżka (Rules vs HA Automation)</li>
-              <li>Łącznik schodowy "na sterydach"</li>
-              <li>RF gateway</li>
-              <li>IR controller</li>
+                <li>Wentylowana szafa na mopa</li>
+                <li>"Follow me bed" - oświetlenie drogi do łóżka (Rules vs HA Automation)</li>
+                <li>Łącznik schodowy "na sterydach"</li>
+                <li>RF gateway</li>
+                <li>IR controller</li>
             </ul>
             <!-- Marcin -->
         </section>
@@ -145,25 +160,25 @@
         <section>
             <h3>Slajd końcowy</h3>
         </section>
-</div>
+    </div>
 
-<script src="dist/reveal.js"></script>
-<script src="plugin/notes/notes.js"></script>
-<script src="plugin/markdown/markdown.js"></script>
-<script src="plugin/highlight/highlight.js"></script>
-<script>
-    // More info about initialization & config:
-    // - https://revealjs.com/initialization/
-    // - https://revealjs.com/config/
-    Reveal.initialize({
-        hash: true,
-        history: true,
-        slideNumber: true,
-        width: '80%',
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+            history: true,
+            slideNumber: true,
+            width: '80%',
 
-        // Learn about plugins: https://revealjs.com/plugins/
-        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
-    });
-</script>
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+        });
+    </script>
 </body>
 </html>
