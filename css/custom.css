@@ -177,3 +177,8 @@ div.overlay {
     margin-left: 5px;
     margin-right: 5px;
 }
+.reveal .r-hstack.medium img {
+    height: 200px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
