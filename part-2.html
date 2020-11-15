@@ -53,28 +53,6 @@
             </div>
         </section>
 
-        <section>
-            <h3>Sensor pogodowy (przykład)</h3>
-            <pre><code data-trim data-noescape>
-                sensor:
-                 - platform: mqtt
-                   state_topic: Weather_1/temp
-                   name: "weather-1-temp"
-                   device_class: "temperature"
-                   unit_of_measurement: "°C"
-                 - platform: mqtt
-                   state_topic: Weather_1/hum
-                   name: "weather-1-hum"
-                   device_class: "humidity"
-                   unit_of_measurement: "%"
-            </code></pre>
-        </section>
-        <section>
-            <h3>Wizualizacja (Lovelace)</h3>
-            <div class="r-hstack">
-                <img src="img/esp-easy/weather-hass.png" alt="hass">
-            </div>
-        </section>
 
         <section>
             <h3>Powiadomienia...</h3>
@@ -84,64 +62,6 @@
                 <img src="img/hass-notifications-3.png" alt="Nots">
             </div>
         </section>
-        <section>
-            <h3>Powiadomienia (Slack)</h3>
-            <pre><code data-trim data-noescape>
-                notify:
-                  - name: 'slacknotifier'
-                    platform: slack
-                    api_key: !secret slack_api_key
-                    default_channel: '#general'
-            </code></pre>
-        </section>
-        <section>
-            <h3>Automatyzacja Home Assistant</h3>
-            <p>Wysłanie powiadomienia przez Slack</p>
-            <pre><code data-trim data-noescape>
-                automation:
-                 - alias: "Notify on overhumid"
-                   trigger:
-                     platform: numeric_state
-                     entity_id: sensor.weather_1_hum
-                     above: 50
-                   action:
-                     - service: notify.slacknotifier
-                       data_template:
-                         message: "Wilgotność w łazience: {{ states('sensor.weather_1_hum') }}%"
-            </code></pre>
-        </section>
-        
-        <section>
-            <h3>Wizualizacja - wykresy</h3>
-            <div class="r-hstack">
-                <img src="img/hass-plots.png" alt="Plots">
-                <img src="img/hass-plots-2.png" alt="Plots2">
-            </div>
-        </section>
-        <section>
-            <h3>Akwizycja i wizualizacja danych - InfluxDB</h3>
-            <pre><code data-trim data-noescape>
-                influxdb:
-                  api_version: 2
-                  ssl: true
-                  host: eu-central-1-1.aws.cloud2.influxdata.com
-                  token: !secret influxdb_token
-                  organization: !secret influxdb_org
-                  bucket: homeassistant
-                  include:
-                    entity_globs:
-                      - sensor.weather_*
-                      - sensor.temp_wody
-                      - sensor.garden_*
-                      - sensor.garage_*
-            </code></pre>
-        </section>
-        <section>
-            <div class="r-hstack">
-                <img src="img/influx-db.png" alt="InfluxDB">
-            </div>
-        </section>
-
 
         <section>
             <h3>Najważniejsze dodatki</h3>
@@ -318,24 +238,15 @@
             </div>
         </section>
         <section>
+            <h3>Tryb konfiguracji</h3>
             <div class="r-hstack">
-                <pre>
-                    <code data-trim data-noescape style="font-size: 0.8em;">
-                        on System#Boot do
-                          AsyncEvent,evtStart
-                        endon
-                        on Rules#Timer=2 do
-                          TaskValueSet,3,1,[Plugin#GPIO#Pinstate#14]
-                          TimerSet,4,600
-                        endon
-                        on Rules#Timer=3 do
-                          AsyncEvent,evtNext
-                        endon
-                        on Rules#Timer=4 do
-                          DeepSleep,900
-                        endif
-                    </code>
-                </pre>
+                <img src="img/devices/weather-mode.png" alt="Mode">
+                <img src="img/devices/weather-dummy.png" alt="Dummy">
+            </div>
+        </section>
+        <section>
+            <h3>Tryb konfiguracji</h3>
+            <div class="r-hstack">
                 <pre>
                     <code data-trim data-noescape style="font-size: 0.8em;">
                         on evtStart do
@@ -352,6 +263,22 @@
                         endon
                     </code>
                 </pre>
+                <pre>
+                    <code data-trim data-noescape style="font-size: 0.8em;">
+                        on System#Boot do AsyncEvent,evtStart endon
+                        on System#Wake do AsyncEvent,evtStart endon
+                        on Rules#Timer=2 do
+                          TaskValueSet,3,1,[Plugin#GPIO#Pinstate#14]
+                          TimerSet,4,600
+                        endon
+                        on Rules#Timer=3 do
+                          AsyncEvent,evtNext
+                        endon
+                        on Rules#Timer=4 do
+                          DeepSleep,900
+                        endif
+                    </code>
+                </pre>
             </div>
         </section>
         <section>
@@ -359,6 +286,85 @@
             <div class="r-hstack">
                 <img src="img/devices/weather-esp.png" alt="esp">
                 <img src="img/devices/weather-reset.png" alt="reset">
+            </div>
+        </section>
+        <section>
+            <h3>Sensor pogodowy (przykład)</h3>
+            <pre><code data-trim data-noescape>
+                sensor:
+                 - platform: mqtt
+                   state_topic: Weather_1/temp
+                   name: "weather-1-temp"
+                   device_class: "temperature"
+                   unit_of_measurement: "°C"
+                 - platform: mqtt
+                   state_topic: Weather_1/hum
+                   name: "weather-1-hum"
+                   device_class: "humidity"
+                   unit_of_measurement: "%"
+            </code></pre>
+        </section>
+        <section>
+            <h3>Wizualizacja (Lovelace)</h3>
+            <div class="r-hstack">
+                <img src="img/esp-easy/weather-hass.png" alt="hass">
+            </div>
+        </section>
+        <section>
+            <h3>Powiadomienia (Slack)</h3>
+            <pre><code data-trim data-noescape>
+                notify:
+                  - name: 'slacknotifier'
+                    platform: slack
+                    api_key: !secret slack_api_key
+                    default_channel: '#general'
+            </code></pre>
+        </section>
+        <section>
+            <h3>Automatyzacja Home Assistant</h3>
+            <p>Wysłanie powiadomienia przez Slack</p>
+            <pre><code data-trim data-noescape>
+                automation:
+                 - alias: "Notify on overhumid"
+                   trigger:
+                     platform: numeric_state
+                     entity_id: sensor.weather_1_hum
+                     above: 50
+                   action:
+                     - service: notify.slacknotifier
+                       data_template:
+                         message: "Wilgotność w łazience: {{ states('sensor.weather_1_hum') }}%"
+            </code></pre>
+        </section>
+
+        <section>
+            <h3>Wizualizacja - wykresy</h3>
+            <div class="r-hstack">
+                <img src="img/hass-plots.png" alt="Plots">
+                <img src="img/hass-plots-2.png" alt="Plots2">
+            </div>
+        </section>
+        <section>
+            <h3>Akwizycja i wizualizacja danych - InfluxDB</h3>
+            <pre><code data-trim data-noescape>
+                influxdb:
+                  api_version: 2
+                  ssl: true
+                  host: eu-central-1-1.aws.cloud2.influxdata.com
+                  token: !secret influxdb_token
+                  organization: !secret influxdb_org
+                  bucket: homeassistant
+                  include:
+                    entity_globs:
+                      - sensor.weather_*
+                      - sensor.temp_wody
+                      - sensor.garden_*
+                      - sensor.garage_*
+            </code></pre>
+        </section>
+        <section>
+            <div class="r-hstack">
+                <img src="img/influx-db.png" alt="InfluxDB">
             </div>
         </section>
 
