@@ -59,14 +59,46 @@
         </section>
         
         <section>
-            <div class="r-hstack">
-                <div>
-                    <img src="img/hass-automation.png" alt="Auto">
-                </div>
-                <div>
-                    <img src="img/hass-slack.png" alt="Slack">
-                </div>
-            </div>
+            <h3>Sensor pogodowy (przykład)</h3>
+            <pre><code data-trim data-noescape>
+                sensor:
+                 - platform: mqtt
+                   state_topic: Weather_1/temp
+                   name: "weather-1-temp"
+                   device_class: "temperature"
+                   unit_of_measurement: "°C"
+                 - platform: mqtt
+                   state_topic: Weather_1/hum
+                   name: "weather-1-hum"
+                   device_class: "humidity"
+                   unit_of_measurement: "%"
+            </code></pre>
+        </section>
+        <section>
+            <h3>Powiadomienia (Slack)</h3>
+            <pre><code data-trim data-noescape>
+                notify:
+                  - name: 'slacknotifier'
+                    platform: slack
+                    api_key: !secret slack_api_key
+                    default_channel: '#general'
+            </code></pre>
+        </section>
+        <section>
+            <h3>Automatyzacja Home Assistant</h3>
+            <p>Wysłanie powiadomienia przez Slack</p>
+            <pre><code data-trim data-noescape>
+                automation:
+                 - alias: "Notify on overhumid"
+                   trigger:
+                     platform: numeric_state
+                     entity_id: sensor.weather_1_hum
+                     above: 50
+                   action:
+                     - service: notify.slacknotifier
+                       data_template:
+                         message: "Wilgotność w łazience: {{ states('sensor.weather_1_hum') }}%"
+            </code></pre>
         </section>
         
         <section>
@@ -88,6 +120,7 @@
               <li>Łącznik schodowy "na sterydach"</li>
               <li>RF gateway</li>
               <li>IR controller</li>
+            </ul>
             <!-- Marcin -->
         </section>
 
@@ -126,6 +159,7 @@
         hash: true,
         history: true,
         slideNumber: true,
+        width: '80%',
 
         // Learn about plugins: https://revealjs.com/plugins/
         plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
