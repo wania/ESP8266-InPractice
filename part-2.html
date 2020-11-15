@@ -238,8 +238,31 @@
             </div>
         </section>
         <section>
+            <h4>Konfiguracja po stronie HomeAssistant (fragment)</h4>
+            <pre><code data-trim data-noescape>
+                sensor:
+                 - platform: mqtt
+                   state_topic: Weather_1/temp
+                   name: "weather-1-temp"
+                   device_class: "temperature"
+                   unit_of_measurement: "°C"
+                 - platform: mqtt
+                   state_topic: Weather_1/hum
+                   name: "weather-1-hum"
+                   device_class: "humidity"
+                   unit_of_measurement: "%"
+            </code></pre>
+        </section>
+        <section>
+            <h3>Wizualizacja (Lovelace)</h3>
+            <div class="r-hstack">
+                <img src="img/esp-easy/weather-hass.png" alt="hass">
+            </div>
+        </section>
+        <section>
             <h3>Tryb konfiguracji</h3>
             <div class="r-hstack">
+                <img src="img/devices/weather-buttons.png" alt="Mode">
                 <img src="img/devices/weather-mode.png" alt="Mode">
                 <img src="img/devices/weather-dummy.png" alt="Dummy">
             </div>
@@ -286,28 +309,6 @@
             <div class="r-hstack">
                 <img src="img/devices/weather-esp.png" alt="esp">
                 <img src="img/devices/weather-reset.png" alt="reset">
-            </div>
-        </section>
-        <section>
-            <h3>Sensor pogodowy (przykład)</h3>
-            <pre><code data-trim data-noescape>
-                sensor:
-                 - platform: mqtt
-                   state_topic: Weather_1/temp
-                   name: "weather-1-temp"
-                   device_class: "temperature"
-                   unit_of_measurement: "°C"
-                 - platform: mqtt
-                   state_topic: Weather_1/hum
-                   name: "weather-1-hum"
-                   device_class: "humidity"
-                   unit_of_measurement: "%"
-            </code></pre>
-        </section>
-        <section>
-            <h3>Wizualizacja (Lovelace)</h3>
-            <div class="r-hstack">
-                <img src="img/esp-easy/weather-hass.png" alt="hass">
             </div>
         </section>
         <section>
