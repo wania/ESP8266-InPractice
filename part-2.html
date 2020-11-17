@@ -437,7 +437,7 @@ RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF e
             <h3>Publikacja danych i uśpienie</h3>
             <div class="r-hstack">
                 <pre>
-                    <code data-trim data-noescape style="font-size: 0.8em;">
+                    <code data-line-numbers data-trim data-noescape style="font-size: 0.8em;">
                         on MQTT#Connected do
                           AsyncEvent,evtPublish
                         endon
@@ -454,7 +454,7 @@ RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF e
                     </code>
                 </pre>
                 <pre>
-                    <code data-trim data-noescape style="font-size: 0.8em;">
+                    <code data-line-numbers data-trim data-noescape style="font-size: 0.8em;">
                         on evtNext do
                           if [dummy#mode]=0
                             DeepSleep,900
@@ -506,7 +506,7 @@ RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF e
             <h3>Tryb konfiguracji</h3>
             <div class="r-hstack">
                 <pre>
-                    <code data-trim data-noescape style="font-size: 0.8em;">
+                    <code data-line-numbers data-trim data-noescape style="font-size: 0.8em;">
                         on System#Boot do AsyncEvent,evtStart endon
                         on System#Wake do AsyncEvent,evtStart endon
                         on Rules#Timer=2 do
@@ -522,7 +522,7 @@ RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF e
                     </code>
                 </pre>
                 <pre>
-                    <code data-trim data-noescape style="font-size: 0.8em;">
+                    <code data-line-numbers data-trim data-noescape style="font-size: 0.8em;">
                         on evtStart do
                           TaskValueSet,3,1,1
                           if [Plugin#GPIO#Pinstate#14]=1
@@ -537,7 +537,7 @@ RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF e
                         endon
                     </code>
                 </pre>
-            </div>
+                </div>
         </section>
         <section>
             <h3>Obwód wybudzania</h3>
