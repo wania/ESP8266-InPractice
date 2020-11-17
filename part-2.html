@@ -507,22 +507,6 @@ RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF e
             <div class="r-hstack">
                 <pre>
                     <code data-trim data-noescape style="font-size: 0.8em;">
-                        on evtStart do
-                          TaskValueSet,3,1,1
-                          if [Plugin#GPIO#Pinstate#14]=1
-                            TimerSet,2,1
-                          else
-                            if [vcc#vcc]<3.20
-                              DeepSleep,4294
-                            endif
-                            TaskValueSet,3,1,0
-                          endif
-                          TimerSet,3,30
-                        endon
-                    </code>
-                </pre>
-                <pre>
-                    <code data-trim data-noescape style="font-size: 0.8em;">
                         on System#Boot do AsyncEvent,evtStart endon
                         on System#Wake do AsyncEvent,evtStart endon
                         on Rules#Timer=2 do
@@ -535,6 +519,22 @@ RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF e
                         on Rules#Timer=4 do
                           DeepSleep,900
                         endif
+                    </code>
+                </pre>
+                <pre>
+                    <code data-trim data-noescape style="font-size: 0.8em;">
+                        on evtStart do
+                          TaskValueSet,3,1,1
+                          if [Plugin#GPIO#Pinstate#14]=1
+                            TimerSet,2,1
+                          else
+                            if [vcc#vcc]<3.20
+                              DeepSleep,4294
+                            endif
+                            TaskValueSet,3,1,0
+                          endif
+                          TimerSet,3,30
+                        endon
                     </code>
                 </pre>
             </div>
