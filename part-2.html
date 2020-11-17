@@ -98,8 +98,60 @@
         </section>
 
         <section>
-            <h3>TODO: MQTT</h3>
-            <!-- Marcin -->
+            <h3>MQ Telemetry Transport (MQTT)</h3>
+            <img src="img/mqtt-example.png">
+        </section>
+        <section>
+            <h3>MQTT - Quality of Service (QoS)</h3>
+            <div class="r-hstack small">
+                <div>
+                    <span class="other-color-2">QoS 0</span> - at most once
+                    <img src="img/mqtt-qos-0.png" width="400">
+                </div>
+                <div>
+                    <span class="other-color-4">QoS 1</span> - at least once
+                    <img src="img/mqtt-qos-1.png" width="400">
+                </div>
+                <div>
+                    <span class="other-color-3">QoS 2</span> - exactly once
+                    <img src="img/mqtt-qos-2.png" width="400">
+                </div>
+            </div>
+        </section>
+        <section>
+            <h3>MQTT - Flagi wiadomości (Publish)</h3>
+            <table>
+                <tbody>
+                <tr>
+                    <td>
+                        <b>Bit 3</b>
+                    </td>
+                    <td>
+                        <b>Bit 2</b>
+                    </td>
+                    <td>
+                        <b>Bit 1</b>
+                    </td>
+                    <td>
+                        <b>Bit 0</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="other-color">
+                        DUP
+                    </td>
+                    <td class="other-color-2">
+                        QoS
+                    </td>
+                    <td class="other-color-2">
+                        QoS
+                    </td>
+                    <td class="other-color-3">
+                        RETAIN
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </section>
 
         <section>
