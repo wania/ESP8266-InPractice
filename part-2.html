@@ -150,7 +150,10 @@
                 </tbody>
             </table>
             <aside class="notes">
-                RETAIN - msg zostanie mimo braku subscrybentów (w przeciwnym wypadku broker usunie wiadomość)
+                <p>RETAIN - msg zostanie mimo braku subscrybentów (w przeciwnym wypadku broker usunie wiadomość)</p>
+                <p>QoS 0 = 0 0</p>
+                <p>QoS 1 = 0 1</p>
+                <p>QoS 2 = 1 0</p>
             </aside>
         </section>
 
@@ -231,6 +234,13 @@ RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF e
         <section>
             <h3>PIR - HomeAssistant podstawowa konfiguracja</h3>
             <pre><code>
+                binary_sensor:
+                  - platform: mqtt
+                    name: Bedroom PIR sensor
+                    device_class: motion
+                    state_topic: "bedroom.pir.01/stat/MOTION"
+            </code></pre>
+            <pre><code>
                 switch:
                   - platform: mqtt
                     name: "Bed strip left"
@@ -239,8 +249,6 @@ RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF e
                     availability_topic: "bedroom.pir.01/tele/LWT"
                     payload_on: "ON"
                     payload_off: "OFF"
-                    retain: false
-                    icon: mdi:led-strip
             </code></pre>
         </section>
         <section>
@@ -251,9 +259,9 @@ RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF e
         </section>
       <section>
         <h3>PIR - HomeAssistant Automation (yaml)</h3>
-        <pre><code>automation:
-    - id: ed99a146147842d48e6479e41f4e6c62
-      alias: Turn on left bedstrip when there is movement
+        <pre><code>
+  automation:
+    - alias: Turn on left bedstrip when there is movement
       trigger:
         - entity_id: binary_sensor.bedroom_pir_sensor
           platform: state
@@ -264,11 +272,10 @@ RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF e
             entity_id: light.bedroom_left_pir_switch
           service: homeassistant.turn_on
 
-    - id: b92a6c75c2ed4a94a49e758a3db6228f
-      alias: Turn off left bedstrip 10 seconds after last movement
+    - alias: Turn off left bedstrip 30 seconds after last movement
       trigger:
       - entity_id: binary_sensor.bedroom_pir_sensor
-        for: 0:00:10
+        for: 0:00:30
         platform: state
         to: 'off'
       action:
@@ -309,26 +316,26 @@ RuleTimer1 30 endon on Rules#Timer=1 do publish bedroom.pir.01/stat/MOTION OFF e
         </div>
       </section>
       <section>
-        <h3>Sonoff RF Rule</h3>
+        <h3>Sonoff RF Bridge - dowolna ilość urządzeń</h3>
         <pre><code>Rule1 on RfReceived#Data do publish rainbow.lr/cmd/rfcode/%value% ON endon</code></pre>
       </section>
       <section>
-        <h3>Sonoff RF - HomeAssistant</h3>
-        <pre><code>binary_sensor:
-    - platform: mqtt
-      name: "RF Switch 01"
-      state_topic: "rainbow.lr/cmd/rfcode/F26A9C"
+        <h3>Sonoff RF Bridge - HomeAssistant</h3>
+        <pre><code>
+            binary_sensor:
+              - platform: mqtt
+                name: "RF Switch 01"
+                state_topic: "rainbow.lr/cmd/rfcode/F26A9C"
         </code></pre>
-        <pre><code>automation:
-    - id: '1588080407317'
-      alias: RF Movies
-      trigger:
-      - payload: 'ON'
-        platform: mqtt
-        topic: rainbow.lr/cmd/rfcode/F26A9C
-      condition: []
-      action:
-      - scene: scene.movies</code></pre>
+        <pre><code>
+            automation:
+              - alias: RF Movies
+                trigger:
+                - payload: 'ON'
+                  platform: mqtt
+                  topic: rainbow.lr/cmd/rfcode/F26A9C
+                action:
+                - scene: scene.movies</code></pre>
       </section>
 
         <section>
